@@ -2887,13 +2887,11 @@
 
     <script src="friendly-game.js"></script>
 <script>
-    <script>
 // ========== تنظیمات سرور ==========
 const JSONBIN_ID = '699b724bd0ea881f40cffd2b';
 const JSONBIN_KEY = '$2a$10$qPwk0hV/EF9NNUgt39C07uORCrJEc46Kqp8WDxoVRmsCRGAP7TvjW';
-const MAIN_GAME_URL = 'https://admin161723.github.io/Mafia_Sun_10000.88.189/';
-const SERVERS_PAGE_URL = 'https://admin161723.github.io/Server_MafiaSun10000.20/'; // 
-const CREATOR_PHONE = '09904844031';
+const SERVERS_PAGE_URL = 'https://admin161723.github.io/Server_MafiaSun10000.20/';
+const AUTH_PAGE_URL = 'https://admin161723.github.io/Mafia_Sun_10.1000/';
 
 // ========== آواتارها ==========
 const AVATARS = {
@@ -2908,20 +2906,7 @@ const AVATARS = {
     'avatar9': 'https://s8.uupload.ir/files/inshot_20260217_183611271_wt7s.png',
     'avatar10': 'https://s8.uupload.ir/files/inshot_20260216_031531507_0k5x.png',
     'avatar11': 'https://s8.uupload.ir/files/inshot_20260216_031443956_hnie.png',
-    'avatar12': 'https://s8.uupload.ir/files/inshot_20260216_031355260_y72k.png',
-
-    // آواتارهای فروشگاه
-    'new13': 'https://s8.uupload.ir/files/inshot_20260222_023037731_8cfr.png',
-    'new14': 'https://s8.uupload.ir/files/inshot_20260222_023128005_w5f7.png',
-    'new15': 'https://s8.uupload.ir/files/inshot_20260222_023210312_6bdu.png',
-    'new16': 'https://s8.uupload.ir/files/inshot_20260222_023303810_19ml.png',
-    'new17': 'https://s8.uupload.ir/files/inshot_20260222_023342992_amud.png',
-    'new18': 'https://s8.uupload.ir/files/inshot_20260222_023414644_ur8u.png',
-    'new19': 'https://s8.uupload.ir/files/inshot_20260222_023446979_ovp2.png',
-
-    // آواتارهای انحصاری سازنده
-    'creator1': 'https://s8.uupload.ir/files/inshot_20260222_023557680_m4qc.png',
-    'creator2': 'https://s8.uupload.ir/files/inshot_20260222_024612597_9s3b.png'
+    'avatar12': 'https://s8.uupload.ir/files/inshot_20260216_031355260_y72k.png'
 };
 
 // ========== آواتارهای جدید ==========
@@ -2936,9 +2921,8 @@ const NEW_AVATARS = [
     { id: 'new8', url: 'https://s8.uupload.ir/files/inshot_20260219_185049749_ecnw.png', price: 250, currency: 'gems', num: '#۰۲۰' }
 ];
 
-// ========== کاربران ویژه جدید (همه پنل‌ها) ==========
+// ========== کاربران ویژه ==========
 const SPECIAL_USERS = [
-    // سازنده بازی (کاربر 1) - تیک آبی
     {
         phone: '09904844031',
         userId: 1,
@@ -2949,11 +2933,8 @@ const SPECIAL_USERS = [
         role: 'creator',
         hasBlueTick: true,
         hasOrangeTick: false,
-        hasBrownTick: false,
-        ownedAvatars: ['avatar1', 'avatar2', 'ninja', 'samurai', 'avatar5', 'avatar6', 'avatar7', 'avatar8', 'avatar9', 'avatar10', 'avatar11', 'avatar12', 'creator1', 'creator2']
+        hasBrownTick: false
     },
-
-    // پشتیبانی 1 (کاربر 3) - تیک آبی
     {
         phone: '09940940720',
         userId: 3,
@@ -2964,11 +2945,8 @@ const SPECIAL_USERS = [
         role: 'support',
         hasBlueTick: true,
         hasOrangeTick: false,
-        hasBrownTick: false,
-        ownedAvatars: ['avatar1', 'avatar2', 'ninja', 'samurai', 'avatar5', 'avatar6', 'avatar7', 'avatar8']
+        hasBrownTick: false
     },
-
-    // پشتیبانی 2 (کاربر 2) - تیک آبی
     {
         phone: '09212327833',
         userId: 2,
@@ -2979,11 +2957,8 @@ const SPECIAL_USERS = [
         role: 'support',
         hasBlueTick: true,
         hasOrangeTick: false,
-        hasBrownTick: false,
-        ownedAvatars: ['avatar1', 'avatar2', 'ninja', 'samurai', 'avatar5', 'avatar6', 'avatar7', 'avatar8']
+        hasBrownTick: false
     },
-
-    // ناظر (کاربر 100) - تیک نارنجی
     {
         phone: '09053065179',
         userId: 100,
@@ -2994,11 +2969,8 @@ const SPECIAL_USERS = [
         role: 'observer',
         hasBlueTick: false,
         hasOrangeTick: true,
-        hasBrownTick: false,
-        ownedAvatars: ['avatar1', 'avatar2', 'ninja', 'samurai']
+        hasBrownTick: false
     },
-
-    // ادمین 1 - elijah021 (کاربر 89) - تیک قهوه‌ای
     {
         phone: '09051396023',
         userId: 89,
@@ -3009,11 +2981,8 @@ const SPECIAL_USERS = [
         role: 'admin',
         hasBlueTick: false,
         hasOrangeTick: false,
-        hasBrownTick: true,
-        ownedAvatars: ['avatar1', 'avatar2', 'ninja', 'samurai', 'avatar5', 'avatar6']
+        hasBrownTick: true
     },
-
-    // ادمین 2 - ʝᴀᴅᴜᴳᴀʀ (کاربر 80) - تیک قهوه‌ای
     {
         phone: '09392865423',
         userId: 80,
@@ -3024,11 +2993,8 @@ const SPECIAL_USERS = [
         role: 'admin',
         hasBlueTick: false,
         hasOrangeTick: false,
-        hasBrownTick: true,
-        ownedAvatars: ['avatar1', 'avatar2', 'ninja', 'samurai', 'avatar5', 'avatar6']
+        hasBrownTick: true
     },
-
-    // ادمین 3 - FARZAM (کاربر 81) - تیک قهوه‌ای
     {
         phone: '09305075756',
         userId: 81,
@@ -3039,8 +3005,7 @@ const SPECIAL_USERS = [
         role: 'admin',
         hasBlueTick: false,
         hasOrangeTick: false,
-        hasBrownTick: true,
-        ownedAvatars: ['avatar1', 'avatar2', 'ninja', 'samurai', 'avatar5', 'avatar6']
+        hasBrownTick: true
     }
 ];
 
@@ -3048,7 +3013,11 @@ const SPECIAL_USERS = [
 const SOUND_URL = 'https://uupload.ir/files/sedatoseda.ir_h1v0.mp3';
 let clickSound = null;
 
-// ========== تابع کمکی برای بارگذاری آواتار از localStorage ==========
+// ========== ذخیره‌سازی ==========
+let tempBannedUsers = [];
+let permanentlyBannedUsers = [];
+
+// ========== توابع کمکی ==========
 function loadUserAvatarFromStorage() {
     try {
         const userData = localStorage.getItem('mafiaSun_userData');
@@ -3060,7 +3029,9 @@ function loadUserAvatarFromStorage() {
                 userId: data.userId || 0,
                 hasBlueTick: data.hasBlueTick || false,
                 hasOrangeTick: data.hasOrangeTick || false,
-                hasBrownTick: data.hasBrownTick || false
+                hasBrownTick: data.hasBrownTick || false,
+                userRole: data.userRole || 'normal',
+                userAge: data.userAge || 0
             };
         }
     } catch (e) {
@@ -3072,8 +3043,64 @@ function loadUserAvatarFromStorage() {
         userId: 0,
         hasBlueTick: false,
         hasOrangeTick: false,
-        hasBrownTick: false
+        hasBrownTick: false,
+        userRole: 'normal',
+        userAge: 0
     };
+}
+
+function getSpecialUserByPhone(phone) {
+    return SPECIAL_USERS.find(user => user.phone === phone);
+}
+
+function loadBanLists() {
+    try {
+        const temp = localStorage.getItem('tempBannedUsers');
+        if (temp) tempBannedUsers = JSON.parse(temp);
+        
+        const perm = localStorage.getItem('permanentlyBannedUsers');
+        if (perm) permanentlyBannedUsers = JSON.parse(perm);
+    } catch (e) {
+        console.error('خطا در بارگذاری لیست بن:', e);
+    }
+}
+
+function saveBanLists() {
+    localStorage.setItem('tempBannedUsers', JSON.stringify(tempBannedUsers));
+    localStorage.setItem('permanentlyBannedUsers', JSON.stringify(permanentlyBannedUsers));
+}
+
+// ========== تابع ذخیره در سرور ==========
+async function saveUserDataToServer(phone, userData) {
+    try {
+        const response = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_ID}`, {
+            headers: { 
+                'X-Master-Key': JSONBIN_KEY,
+                'X-Bin-Meta': 'false'
+            }
+        });
+
+        if (!response.ok) return false;
+
+        const data = await response.json();
+        
+        if (!data.users) data.users = {};
+        data.users[phone] = userData;
+        
+        const saveResponse = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_ID}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Master-Key': JSONBIN_KEY
+            },
+            body: JSON.stringify(data)
+        });
+
+        return saveResponse.ok;
+    } catch (error) {
+        console.error('❌ خطا در ذخیره در سرور:', error);
+        return false;
+    }
 }
 
 // ========== شیء اصلی برنامه ==========
@@ -3082,8 +3109,6 @@ const App = {
     userName: 'بازیکن',
     userPhone: '',
     userId: 0,
-    isGameCreator: false,
-    isLobbyCreator: false,
     userGems: 100,
     userCoins: 600,
     ownedAvatars: ['avatar1', 'avatar2'],
@@ -3094,43 +3119,14 @@ const App = {
         gamesPlayed: 0,
         totalHours: 0
     },
-    userRole: null,
+    userRole: 'normal',
     hasBlueTick: false,
     hasOrangeTick: false,
     hasBrownTick: false,
+    userAge: 0,
 
-    lobbies: [],
-    nextLobbyId: 1,
-    isPasswordEnabled: false,
-    maxPlayers: 8,
-    initialized: false,
-
-    currentLobby: null,
-    bannedUsers: [],
-    blacklist: [],
-    tempBannedUsers: [],
-    reports: [],
-    currentCreator: null,
     selectedPlayerId: null,
     selectedPlayerData: null,
-    observer1: null,
-    observer2: null,
-    playersData: {},
-    playersReady: {},
-    lobbyBannedUsers: [],
-
-    // متغیرهای چت
-    chatMessages: [],
-    chatVisible: false,
-    unreadCount: 0,
-    tempMessages: [],
-
-    syncInterval: null,
-    lastSync: 0,
-
-    micActive: false,
-    audioContext: null,
-    mediaStream: null,
 
     avatars: { ...AVATARS },
 
@@ -3148,7 +3144,7 @@ const App = {
         }
     },
 
-    // ========== توابع کمکی ==========
+    // ========== دریافت لینک آواتار ==========
     getAvatarImage(avatar) {
         if (this.avatars[avatar]) return this.avatars[avatar];
         const newAvatar = NEW_AVATARS.find(a => a.id === avatar);
@@ -3159,184 +3155,20 @@ const App = {
         return this.avatars.avatar1;
     },
 
+    // ========== نمایش نوتیفیکیشن ==========
     showNotification(message, isBan = false, duration = 3000) {
         this.playClickSound();
         const notification = document.getElementById('copyNotification');
         if (!notification) return;
         notification.textContent = message;
-        notification.classList.toggle('ban-notification', isBan);
+        notification.classList.toggle('ban', isBan);
         notification.style.display = 'block';
         setTimeout(() => notification.style.display = 'none', duration);
     },
 
-    getSpecialUserByPhone(phone) {
-        return SPECIAL_USERS.find(user => user.phone === phone);
-    },
-
-    getSpecialUserById(userId) {
-        return SPECIAL_USERS.find(user => user.userId === userId);
-    },
-
-    // ========== توابع سرور JSONBin ==========
-    async fetchFromServer() {
-        try {
-            console.log('🔄 در حال دریافت اطلاعات از سرور...');
-            const response = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_ID}`, {
-                headers: { 
-                    'X-Master-Key': JSONBIN_KEY,
-                    'X-Bin-Meta': 'false'
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error(`خطای سرور: ${response.status}`);
-            }
-
-            const data = await response.json();
-            console.log('✅ اطلاعات با موفقیت از سرور دریافت شد');
-            return data;
-        } catch (error) {
-            console.error('❌ خطا در دریافت از سرور:', error);
-            this.showNotification('⚠️ خطا در اتصال به سرور، استفاده از حافظه محلی');
-            return null;
-        }
-    },
-
-    async saveToServer(data) {
-        try {
-            console.log('🔄 در حال ذخیره اطلاعات در سرور...');
-            const response = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_ID}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-Master-Key': JSONBIN_KEY
-                },
-                body: JSON.stringify(data)
-            });
-
-            if (!response.ok) {
-                throw new Error(`خطای سرور: ${response.status}`);
-            }
-
-            console.log('✅ اطلاعات با موفقیت در سرور ذخیره شد');
-            return true;
-        } catch (error) {
-            console.error('❌ خطا در ذخیره در سرور:', error);
-            this.showNotification('⚠️ خطا در ذخیره در سرور، اطلاعات در حافظه محلی ذخیره شد');
-
-            localStorage.setItem('mafiaSun_backup_lobbies', JSON.stringify(data.lobbies));
-            localStorage.setItem('mafiaSun_backup_blacklist', JSON.stringify(data.blacklist));
-            localStorage.setItem('mafiaSun_backup_reports', JSON.stringify(data.reports));
-            localStorage.setItem('mafiaSun_backup_tempBans', JSON.stringify(data.tempBannedUsers));
-            return false;
-        }
-    },
-
-    async saveLobbiesToServer() {
-        const data = {
-            lobbies: this.lobbies,
-            nextLobbyId: this.nextLobbyId,
-            blacklist: this.blacklist,
-            tempBannedUsers: this.tempBannedUsers,
-            reports: this.reports,
-            chatMessages: this.chatMessages,
-            lastUpdate: new Date().toISOString()
-        };
-
-        localStorage.setItem('mafiaSun_lobbies', JSON.stringify(data));
-        localStorage.setItem('mafiaSun_blacklist', JSON.stringify(this.blacklist));
-        localStorage.setItem('mafiaSun_tempBans', JSON.stringify(this.tempBannedUsers));
-        localStorage.setItem('mafiaSun_reports', JSON.stringify(this.reports));
-        localStorage.setItem('mafiaSun_chatMessages', JSON.stringify(this.chatMessages));
-
-        return await this.saveToServer(data);
-    },
-
-    async loadFromServer() {
-        const serverData = await this.fetchFromServer();
-
-        if (serverData) {
-            if (serverData.lobbies) this.lobbies = serverData.lobbies;
-            if (serverData.nextLobbyId) this.nextLobbyId = serverData.nextLobbyId;
-            if (serverData.blacklist) this.blacklist = serverData.blacklist;
-            if (serverData.tempBannedUsers) this.tempBannedUsers = serverData.tempBannedUsers;
-            if (serverData.reports) this.reports = serverData.reports;
-            if (serverData.chatMessages) this.chatMessages = serverData.chatMessages;
-
-            console.log('✅ اطلاعات از سرور بارگذاری شد');
-            return true;
-        } else {
-            const backups = {
-                lobbies: localStorage.getItem('mafiaSun_lobbies'),
-                blacklist: localStorage.getItem('mafiaSun_blacklist'),
-                tempBans: localStorage.getItem('mafiaSun_tempBans'),
-                reports: localStorage.getItem('mafiaSun_reports'),
-                chatMessages: localStorage.getItem('mafiaSun_chatMessages')
-            };
-
-            if (backups.lobbies) {
-                try {
-                    const data = JSON.parse(backups.lobbies);
-                    this.lobbies = data.lobbies || [];
-                    this.nextLobbyId = data.nextLobbyId || 1;
-                } catch (e) {}
-            }
-
-            if (backups.blacklist) {
-                try {
-                    this.blacklist = JSON.parse(backups.blacklist) || [];
-                } catch (e) {}
-            }
-
-            if (backups.tempBans) {
-                try {
-                    this.tempBannedUsers = JSON.parse(backups.tempBans) || [];
-                } catch (e) {}
-            }
-
-            if (backups.reports) {
-                try {
-                    this.reports = JSON.parse(backups.reports) || [];
-                } catch (e) {}
-            }
-
-            if (backups.chatMessages) {
-                try {
-                    this.chatMessages = JSON.parse(backups.chatMessages) || [];
-                } catch (e) {}
-            }
-
-            console.log('✅ اطلاعات از حافظه محلی بارگذاری شد');
-            return false;
-        }
-    },
-
-    saveCompleteUserData() {
-        const userData = {
-            userId: this.userId,
-            userPhone: this.userPhone,
-            userName: this.userName,
-            isCreator: this.isGameCreator,
-            userGems: this.userGems,
-            userCoins: this.userCoins,
-            ownedAvatars: this.ownedAvatars,
-            currentAvatar: this.currentAvatar,
-            editCount: this.editCount,
-            userStats: this.userStats,
-            userRole: this.userRole,
-            hasBlueTick: this.hasBlueTick,
-            hasOrangeTick: this.hasOrangeTick,
-            hasBrownTick: this.hasBrownTick,
-            lastSave: new Date().toISOString()
-        };
-
-        localStorage.setItem('mafiaSun_userData', JSON.stringify(userData));
-    },
-
-    // ========== بارگذاری اطلاعات کاربر با اولویت آواتار جدید ==========
+    // ========== بارگذاری اطلاعات کاربر ==========
     loadUserData() {
         try {
-            // اول از همه از localStorage آواتار رو بگیر
             const avatarData = loadUserAvatarFromStorage();
             this.currentAvatar = avatarData.currentAvatar;
             this.userName = avatarData.userName;
@@ -3344,19 +3176,20 @@ const App = {
             this.hasBlueTick = avatarData.hasBlueTick;
             this.hasOrangeTick = avatarData.hasOrangeTick;
             this.hasBrownTick = avatarData.hasBrownTick;
+            this.userRole = avatarData.userRole;
+            this.userAge = avatarData.userAge;
 
             const currentUser = localStorage.getItem('mafiaSun_currentUser');
-
+            
             if (!currentUser) {
                 console.log('کاربر وارد نشده، هدایت به صفحه ثبت‌نام');
-                window.location.href = 'https://admin161723.github.io/Mafia_Sun_10.1000/';
-                return;
+                window.location.href = AUTH_PAGE_URL;
+                return false;
             }
 
             const userPhone = JSON.parse(currentUser).phone || '';
-            console.log('شماره کاربر:', userPhone);
-
-            const specialUser = this.getSpecialUserByPhone(userPhone);
+            this.userPhone = userPhone;
+            const specialUser = getSpecialUserByPhone(userPhone);
 
             if (specialUser) {
                 console.log('کاربر ویژه یافت شد:', specialUser);
@@ -3369,2217 +3202,267 @@ const App = {
                 this.hasBlueTick = specialUser.hasBlueTick || false;
                 this.hasOrangeTick = specialUser.hasOrangeTick || false;
                 this.hasBrownTick = specialUser.hasBrownTick || false;
-
-                if (specialUser.ownedAvatars) {
-                    this.ownedAvatars = specialUser.ownedAvatars;
-                } else {
-                    this.ownedAvatars = ['avatar1', 'avatar2', 'ninja', 'samurai'];
-                }
-
-                this.isGameCreator = (specialUser.role === 'creator' || specialUser.role === 'support');
-                this.editCount = 0;
-
-                this.saveCompleteUserData();
-                this.updateAllDisplays();
-                return;
-            }
-
-            if (userPhone === CREATOR_PHONE) {
-                console.log('کاربر سازنده یافت شد');
-                this.userId = 1;
-                this.userPhone = CREATOR_PHONE;
-                this.userName = 'ᴀᴍᴏᴍɪᴛɪ';
-                this.userGems = Infinity;
-                this.userCoins = Infinity;
-                this.userRole = 'creator';
-                this.hasBlueTick = true;
-                this.hasOrangeTick = false;
-                this.hasBrownTick = false;
-                this.ownedAvatars = ['avatar1', 'avatar2', 'ninja', 'samurai', 'avatar5', 'avatar6', 'avatar7', 'avatar8', 'avatar9', 'avatar10', 'avatar11', 'avatar12', 'creator1', 'creator2'];
-                this.isGameCreator = true;
-                this.editCount = 0;
-
-                this.saveCompleteUserData();
-                this.updateAllDisplays();
-                return;
+                this.userAge = 25;
             }
 
             const savedData = localStorage.getItem('mafiaSun_userData');
             if (savedData) {
-                console.log('بارگذاری از داده ذخیره شده');
                 const data = JSON.parse(savedData);
-
-                this.userId = data.userId || 0;
-                this.userPhone = data.userPhone || '';
-                this.userName = data.userName || 'بازیکن';
-                this.userGems = data.userGems !== undefined ? data.userGems : 100;
-                this.userCoins = data.userCoins !== undefined ? data.userCoins : 600;
-                this.ownedAvatars = data.ownedAvatars || ['avatar1', 'avatar2'];
-                this.currentAvatar = data.currentAvatar || 'avatar1';
+                this.userGems = data.userGems !== undefined ? data.userGems : this.userGems;
+                this.userCoins = data.userCoins !== undefined ? data.userCoins : this.userCoins;
+                this.ownedAvatars = data.ownedAvatars || this.ownedAvatars;
                 this.editCount = data.editCount || 0;
-                this.userStats = data.userStats || { 
-                    wins: 0, 
-                    losses: 0, 
-                    gamesPlayed: 0, 
-                    totalHours: 0 
-                };
-                this.userRole = data.userRole || null;
-                this.hasBlueTick = data.hasBlueTick || false;
-                this.hasOrangeTick = data.hasOrangeTick || false;
-                this.hasBrownTick = data.hasBrownTick || false;
-                this.isGameCreator = false;
-
-                NEW_AVATARS.forEach(avatar => {
-                    if (!this.avatars[avatar.id]) {
-                        this.avatars[avatar.id] = avatar.url;
-                    }
-                });
-
-                this.loadFromLocalStorage();
-                this.updateAllDisplays();
-            } else {
-                console.log('داده‌ای یافت نشد');
-                window.location.href = 'https://admin161723.github.io/Mafia_Sun_10.1000/';
+                this.userStats = data.userStats || this.userStats;
+                this.userAge = data.userAge !== undefined ? data.userAge : this.userAge;
             }
+
+            console.log('👤 کاربر:', this.userName);
+            console.log('👑 نقش:', this.userRole);
+            console.log('📅 سن:', this.userAge);
+            
+            return true;
         } catch (e) {
             console.error('خطا در بارگذاری اطلاعات:', e);
-            window.location.href = 'https://admin161723.github.io/Mafia_Sun_10.1000/';
+            return false;
         }
     },
 
-    loadFromLocalStorage() {
-        try {
-            const savedBlacklist = localStorage.getItem('mafiaSun_blacklist');
-            if (savedBlacklist) {
-                this.blacklist = JSON.parse(savedBlacklist);
-            }
-
-            const savedTempBans = localStorage.getItem('mafiaSun_tempBans');
-            if (savedTempBans) {
-                this.tempBannedUsers = JSON.parse(savedTempBans);
-                const now = Date.now();
-                this.tempBannedUsers = this.tempBannedUsers.filter(ban => ban.expiry > now);
-            }
-
-            const savedReports = localStorage.getItem('mafiaSun_reports');
-            if (savedReports) {
-                this.reports = JSON.parse(savedReports);
-            }
-
-            const savedChatMessages = localStorage.getItem('mafiaSun_chatMessages');
-            if (savedChatMessages) {
-                this.chatMessages = JSON.parse(savedChatMessages);
-            }
-        } catch (e) {
-            console.error('خطا در بارگذاری از localStorage:', e);
-        }
+    // ========== بررسی دسترسی مدیریت ==========
+    hasAdminAccess() {
+        return this.userRole === 'creator' || 
+               this.userRole === 'support' || 
+               this.userRole === 'admin' ||
+               this.hasBlueTick || 
+               this.hasBrownTick;
     },
 
-    isUserTempBanned(userId) {
-        const ban = this.tempBannedUsers.find(b => b.userId === userId);
-        if (ban) {
-            if (ban.expiry > Date.now()) {
-                return ban;
-            } else {
-                this.tempBannedUsers = this.tempBannedUsers.filter(b => b.userId !== userId);
-                this.saveLobbiesToServer();
-                return null;
-            }
-        }
-        return null;
-    },
-
-    isUserPermanentlyBanned(userId) {
-        return this.blacklist.includes(userId);
-    },
-
-    checkUserBanStatus() {
-        if (this.blacklist.includes(this.userId)) {
-            const banInfo = {
-                userId: this.userId,
-                userName: this.userName,
-                reason: 'بن دائمی توسط مدیریت',
-                permanent: true,
-                bannedByName: 'مدیریت',
-                durationText: 'دائمی'
-            };
-
-            sessionStorage.setItem('banInfo', JSON.stringify(banInfo));
-
-            localStorage.removeItem('mafiaSun_loggedIn');
-            localStorage.removeItem('mafiaSun_rememberMe');
-            localStorage.removeItem('mafiaSun_currentUser');
-
-            this.showNotification('🚫 شما بن شده‌اید!', true, 2000);
-            setTimeout(() => {
-                window.location.href = 'https://admin161723.github.io/Mafia_Sun_10.1000/';
-            }, 2000);
+    // ========== بررسی دسترسی به سرور ==========
+    checkServerAccess() {
+        if (this.hasAdminAccess()) {
+            console.log('✅ دسترسی ویژه به سرور');
             return true;
         }
-
-        const tempBan = this.tempBannedUsers.find(b => b.userId === this.userId);
-        if (tempBan) {
-            if (tempBan.expiry > Date.now()) {
-                const banInfo = {
-                    ...tempBan,
-                    durationText: 'موقت'
-                };
-
-                sessionStorage.setItem('banInfo', JSON.stringify(banInfo));
-
-                localStorage.removeItem('mafiaSun_loggedIn');
-                localStorage.removeItem('mafiaSun_rememberMe');
-                localStorage.removeItem('mafiaSun_currentUser');
-
-                this.showNotification(`🚫 شما بن شده‌اید: ${tempBan.reason}`, true, 2000);
-                setTimeout(() => {
-                    window.location.href = 'https://admin161723.github.io/Mafia_Sun_10.1000/';
-                }, 2000);
-                return true;
-            } else {
-                this.tempBannedUsers = this.tempBannedUsers.filter(b => b.userId !== this.userId);
-                this.saveLobbiesToServer();
-            }
-        }
-
-        return false;
-    },
-
-    async initializeGame() {
-        if (this.initialized) return;
-        this.initialized = true;
-        console.log('🎮 راه‌اندازی تالار دوستانه...');
-
-        this.loadUserData();
-        await this.loadFromServer();
-
-        if (this.checkUserBanStatus()) {
-            return;
-        }
-
-        this.startAutoSync();
-
-        setInterval(() => {
-            this.saveCompleteUserData();
-        }, 30000);
-
-        this.renderLobbies();
-    },
-
-    startAutoSync() {
-        if (this.syncInterval) clearInterval(this.syncInterval);
-        this.syncInterval = setInterval(() => this.syncLobbies(), 5000);
-    },
-
-    async syncLobbies() {
-        const now = Date.now();
-        if (now - this.lastSync < 3000) return;
-        this.lastSync = now;
-
-        await this.loadFromServer();
-
-        const friendlyHall = document.getElementById('friendly-hall-page');
-        if (friendlyHall && friendlyHall.style.display === 'block') {
-            this.renderLobbies();
-        }
-
-        if (this.currentLobby) {
-            const updatedLobby = this.lobbies.find(l => l.id === this.currentLobby.id);
-            if (updatedLobby) {
-                this.currentLobby = updatedLobby;
-                this.bannedUsers = updatedLobby.bannedUsers || [];
-                this.lobbyBannedUsers = updatedLobby.bannedUsers || [];
-                this.currentCreator = updatedLobby.creatorId;
-                this.syncPlayersWithServer(updatedLobby);
-
-                if (updatedLobby.readyStatus) {
-                    this.playersReady = updatedLobby.readyStatus;
-                    for (let playerId in this.playersReady) {
-                        this.updatePlayerReadyStatus(parseInt(playerId), this.playersReady[playerId]);
-                    }
-                }
-            } else {
-                this.showNotification('⚠️ لابی توسط سازنده حذف شد');
-                this.leaveLobby();
-            }
-        }
-
-        this.checkUserBanStatus();
-    },
-
-    syncPlayersWithServer(lobby) {
-        if (!lobby || !lobby.players) return;
-
-        lobby.players.forEach(player => {
-            if (!this.playersData[player.id]) {
-                this.addPlayerToLobby(player, player.chair);
-            }
-        });
-
-        for (let id in this.playersData) {
-            if (!lobby.players.some(p => p.id == id)) {
-                this.removePlayerFromLobby(parseInt(id));
-            }
-        }
-
-        if (lobby.observer1 !== undefined) this.observer1 = lobby.observer1;
-        if (lobby.observer2 !== undefined) this.observer2 = lobby.observer2;
-
-        if (this.observer1) {
-            const observerPlayer = lobby.players.find(p => p.id === this.observer1);
-            if (observerPlayer) this.updateObserverDisplay(1, observerPlayer);
-        }
-        if (this.observer2) {
-            const observerPlayer = lobby.players.find(p => p.id === this.observer2);
-            if (observerPlayer) this.updateObserverDisplay(2, observerPlayer);
-        }
-    },
-
-    renderLobbies() {
-        const container = document.getElementById('lobbies-container');
-        if (!container) return;
-
-        if (this.lobbies.length === 0) {
-            container.innerHTML = '<div class="empty-lobbies">🎮 هنوز لابی‌ای ایجاد نشده<br>اولین لابی را ایجاد کنید!</div>';
-            return;
-        }
-
-        let html = '';
-        const sortedLobbies = [...this.lobbies].reverse();
-
-        sortedLobbies.forEach(lobby => {
-            if (!lobby) return;
-
-            const avatarSrc = this.getAvatarImage(lobby.creatorAvatar);
-            const passwordIndicator = lobby.hasPassword ? '<div class="lobby-password-indicator">🔒 رمز دارد</div>' : '';
-            const playerCount = lobby.players ? lobby.players.length : 1;
-
-            const deleteButton = (this.isGameCreator || this.userRole === 'support') ? 
-                `<button class="lobby-join-btn" style="background: #ff5555; margin-left: 10px;" onclick="app.deleteLobby(${lobby.id})">🗑️ حذف</button>` : '';
-
-            let creatorBadge = '';
-            if (lobby.creatorId === 1 || this.getSpecialUserById(lobby.creatorId)?.hasBlueTick) {
-                creatorBadge = '<i class="fas fa-check-circle" style="color: #3b9eff;"></i>';
-            } else if (this.getSpecialUserById(lobby.creatorId)?.hasOrangeTick) {
-                creatorBadge = '<i class="fas fa-check-circle" style="color: #ffaa00;"></i>';
-            } else if (this.getSpecialUserById(lobby.creatorId)?.hasBrownTick) {
-                creatorBadge = '<i class="fas fa-check-circle" style="color: #8B4513;"></i>';
-            }
-
-            html += `
-                <div class="lobby-card">
-                    <div class="lobby-name-section">
-                        <span class="lobby-name-text">${lobby.name}</span>
-                        ${passwordIndicator}
-                    </div>
-                    <div class="lobby-creator-box">
-                        <div class="lobby-creator-avatar"><img src="${avatarSrc}"></div>
-                        <div class="lobby-creator-details">
-                            <div class="lobby-creator-name">
-                                ${creatorBadge} ${lobby.creatorName}
-                            </div>
-                            <div class="lobby-players"><span>👥</span> ${playerCount}/${lobby.maxPlayers}</div>
-                        </div>
-                        <div style="display: flex; gap: 5px;">
-                            ${deleteButton}
-                            <button class="lobby-join-btn" onclick="app.joinLobby(${lobby.id})">ورود</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        });
-
-        container.innerHTML = html;
-    },
-
-    goBackToGame() {
-        this.playClickSound();
-        window.location.href = MAIN_GAME_URL;
-    },
-
-    openCreateLobbyMenu() {
-        this.playClickSound();
-        const tempBan = this.isUserTempBanned(this.userId);
-        if (tempBan && !this.isGameCreator && this.userRole !== 'support') {
-            this.showNotification(`🚫 شما موقتاً بن شده‌اید: ${tempBan.reason}`, true);
-            return;
-        }
-
-        if (this.isUserPermanentlyBanned(this.userId) && !this.isGameCreator && this.userRole !== 'support') {
-            this.showNotification('🚫 شما بن دائمی شده‌اید', true);
-            return;
-        }
-
-        const menu = document.getElementById('create-lobby-menu');
-        if (menu) {
-            menu.style.display = 'block';
-            const nameInput = document.getElementById('lobby-name-input');
-            const passInput = document.getElementById('lobby-password-input');
-            const passField = document.getElementById('password-field');
-            const toggleSwitch = document.getElementById('password-toggle-switch');
-            const countValue = document.getElementById('player-count-value');
-
-            if (nameInput) nameInput.value = '';
-            if (passInput) passInput.value = '';
-            this.isPasswordEnabled = false;
-            this.maxPlayers = 8;
-            if (countValue) countValue.textContent = '8';
-            if (passField) passField.style.display = 'none';
-            if (toggleSwitch) toggleSwitch.classList.remove('active');
-        }
-    },
-
-    closeCreateLobbyMenu() {
-        this.playClickSound();
-        const menu = document.getElementById('create-lobby-menu');
-        if (menu) menu.style.display = 'none';
-    },
-
-    togglePasswordField() {
-        this.playClickSound();
-        const toggleSwitch = document.getElementById('password-toggle-switch');
-        const passwordField = document.getElementById('password-field');
-
-        this.isPasswordEnabled = !this.isPasswordEnabled;
-
-        if (this.isPasswordEnabled) {
-            if (toggleSwitch) toggleSwitch.classList.add('active');
-            if (passwordField) passwordField.style.display = 'block';
+        
+        if (this.userAge < 18) {
+            console.log('✅ دسترسی مجاز (زیر ۱۸ سال)');
+            return true;
         } else {
-            if (toggleSwitch) toggleSwitch.classList.remove('active');
-            if (passwordField) passwordField.style.display = 'none';
-        }
-    },
-
-    changePlayerCount(delta) {
-        this.playClickSound();
-        this.maxPlayers += delta;
-        if (this.maxPlayers < 4) this.maxPlayers = 4;
-        if (this.maxPlayers > 16) this.maxPlayers = 16;
-        const countValue = document.getElementById('player-count-value');
-        if (countValue) countValue.textContent = this.maxPlayers;
-    },
-
-    async createLobby() {
-        this.playClickSound();
-        const tempBan = this.isUserTempBanned(this.userId);
-        if (tempBan && !this.isGameCreator && this.userRole !== 'support') {
-            this.showNotification(`🚫 شما موقتاً بن شده‌اید: ${tempBan.reason}`, true);
-            return;
-        }
-
-        if (this.isUserPermanentlyBanned(this.userId) && !this.isGameCreator && this.userRole !== 'support') {
-            this.showNotification('🚫 شما بن دائمی شده‌اید', true);
-            return;
-        }
-
-        const lobbyName = document.getElementById('lobby-name-input').value.trim();
-        if (!lobbyName) {
-            alert('❌ لطفا نام لابی را وارد کنید');
-            return;
-        }
-
-        let password = '';
-        if (this.isPasswordEnabled) {
-            password = document.getElementById('lobby-password-input').value.trim();
-            if (!password) {
-                alert('❌ لطفا رمزعبور را وارد کنید');
-                return;
-            }
-        }
-
-        const userIP = '192.168.1.' + Math.floor(Math.random() * 255);
-
-        const newLobby = {
-            id: this.nextLobbyId++,
-            name: lobbyName,
-            creatorId: this.userId,
-            creatorName: this.userName,
-            creatorAvatar: this.currentAvatar,
-            creatorAvatarSrc: this.getAvatarImage(this.currentAvatar),
-            password: password,
-            hasPassword: this.isPasswordEnabled,
-            maxPlayers: this.maxPlayers,
-            players: [{
-                id: this.userId,
-                name: this.userName,
-                avatar: this.currentAvatar,
-                isCreator: true,
-                chair: 1,
-                ip: userIP,
-                role: this.userRole,
-                hasBlueTick: this.hasBlueTick,
-                hasOrangeTick: this.hasOrangeTick,
-                hasBrownTick: this.hasBrownTick
-            }],
-            readyStatus: {},
-            bannedUsers: [],
-            observer1: null,
-            observer2: null,
-            createdAt: new Date().toISOString()
-        };
-
-        newLobby.readyStatus[this.userId] = true;
-
-        this.lobbies.push(newLobby);
-        await this.saveLobbiesToServer();
-        this.closeCreateLobbyMenu();
-        this.enterLobby(newLobby);
-    },
-
-    async joinLobby(lobbyId) {
-        this.playClickSound();
-        const tempBan = this.isUserTempBanned(this.userId);
-        if (tempBan && !this.isGameCreator && this.userRole !== 'support') {
-            this.showNotification(`🚫 شما موقتاً بن شده‌اید: ${tempBan.reason}`, true);
-            return;
-        }
-
-        if (this.isUserPermanentlyBanned(this.userId) && !this.isGameCreator && this.userRole !== 'support') {
-            this.showNotification('🚫 شما بن دائمی شده‌اید', true);
-            return;
-        }
-
-        const lobby = this.lobbies.find(l => l.id === lobbyId);
-        if (!lobby) {
-            alert('❌ لابی مورد نظر یافت نشد');
-            return;
-        }
-
-        if (lobby.bannedUsers && lobby.bannedUsers.includes(this.userId) && !this.isGameCreator && this.userRole !== 'support') {
-            this.showNotification('🚫 شما از این لابی مسدود شده‌اید');
-            return;
-        }
-
-        if (lobby.hasPassword) {
-            const enteredPassword = prompt('🔒 لطفا رمزعبور لابی را وارد کنید:');
-            if (enteredPassword !== lobby.password) {
-                alert('❌ رمزعبور اشتباه است');
-                return;
-            }
-        }
-
-        const userIP = '192.168.1.' + Math.floor(Math.random() * 255);
-
-        if (!lobby.players.some(p => p.id === this.userId)) {
-            let chairNumber = 1;
-            const occupiedChairs = lobby.players.map(p => p.chair).filter(c => c);
-
-            for (let i = 1; i <= 10; i++) {
-                if (!occupiedChairs.includes(i)) {
-                    chairNumber = i;
-                    break;
-                }
-            }
-
-            lobby.players.push({
-                id: this.userId,
-                name: this.userName,
-                avatar: this.currentAvatar,
-                isCreator: false,
-                chair: chairNumber,
-                ip: userIP,
-                role: this.userRole,
-                hasBlueTick: this.hasBlueTick,
-                hasOrangeTick: this.hasOrangeTick,
-                hasBrownTick: this.hasBrownTick
-            });
-
-            if (!lobby.readyStatus) lobby.readyStatus = {};
-            lobby.readyStatus[this.userId] = true;
-
-            await this.saveLobbiesToServer();
-        }
-
-        this.enterLobby(lobby);
-    },
-
-    enterLobby(lobby) {
-        const friendlyHall = document.getElementById('friendly-hall-page');
-        const lobbyPage = document.getElementById('lobby-page');
-
-        if (friendlyHall) friendlyHall.style.display = 'none';
-        if (lobbyPage) lobbyPage.style.display = 'block';
-
-        this.currentLobby = lobby;
-        this.currentCreator = lobby.creatorId;
-        this.isLobbyCreator = (this.userId === lobby.creatorId);
-        this.playersData = {};
-        this.observer1 = lobby.observer1 || null;
-        this.observer2 = lobby.observer2 || null;
-        this.bannedUsers = lobby.bannedUsers || [];
-        this.lobbyBannedUsers = lobby.bannedUsers || [];
-        this.playersReady = lobby.readyStatus || {};
-
-        const isReady = this.playersReady[this.userId] !== undefined ? this.playersReady[this.userId] : true;
-
-        for (let i = 1; i <= 10; i++) {
-            const chair = document.getElementById(`chair-${i}`);
-            if (chair) {
-                chair.classList.add('empty-chair');
-                chair.innerHTML = `<div class="chair-avatar"></div><div class="chair-name">خالی</div>`;
-                delete chair.dataset.playerId;
-            }
-
-            const speakingBadge = document.getElementById(`speaking-${i}`);
-            if (speakingBadge) speakingBadge.style.display = 'none';
-        }
-
-        const observer1 = document.getElementById('observerChair1');
-        const observer2 = document.getElementById('observerChair2');
-        const obsSpeaking1 = document.getElementById('observer-speaking-1');
-        const obsSpeaking2 = document.getElementById('observer-speaking-2');
-
-        if (observer1) observer1.classList.remove('visible');
-        if (observer2) observer2.classList.remove('visible');
-        if (obsSpeaking1) obsSpeaking1.style.display = 'none';
-        if (obsSpeaking2) obsSpeaking2.style.display = 'none';
-
-        if (lobby.players) {
-            lobby.players.forEach(player => {
-                if (player.id === this.userId && player.avatar !== this.currentAvatar) {
-                    player.avatar = this.currentAvatar;
-                }
-                this.addPlayerToLobby(player, player.chair);
-            });
-        }
-
-        if (this.observer1) {
-            const observerPlayer = lobby.players.find(p => p.id === this.observer1);
-            if (observerPlayer) this.updateObserverDisplay(1, observerPlayer);
-        }
-        if (this.observer2) {
-            const observerPlayer = lobby.players.find(p => p.id === this.observer2);
-            if (observerPlayer) this.updateObserverDisplay(2, observerPlayer);
-        }
-
-        const readyToggle = document.getElementById('readyToggle');
-        const readyText = document.getElementById('readyText');
-        if (readyToggle && readyText) {
-            if (isReady) {
-                readyToggle.classList.add('ready');
-                readyToggle.classList.remove('not-ready');
-                readyText.textContent = 'آماده هستم';
-            } else {
-                readyToggle.classList.add('not-ready');
-                readyToggle.classList.remove('ready');
-                readyText.textContent = 'آماده نیستم';
-            }
-        }
-
-        if (readyToggle) {
-            if (this.isGameCreator || this.userRole === 'support' || this.userRole === 'observer') {
-                readyToggle.style.opacity = '0.5';
-                readyToggle.style.pointerEvents = 'none';
-            } else {
-                readyToggle.style.opacity = '1';
-                readyToggle.style.pointerEvents = 'auto';
-            }
-        }
-
-        this.updateMainMenu();
-        this.loadChatMessages();
-    },
-
-    updateMainMenu() {
-        const menu = document.getElementById('mainMenu');
-        if (!menu) return;
-
-        let menuHTML = '';
-
-        if (this.isGameCreator || this.userRole === 'support') {
-            menuHTML = `
-                <div class="menu-item" onclick="app.openGameCreatorPanel()">⚡ پنل سازنده بازی</div>
-                <div class="menu-item" onclick="app.viewBannedList()">📋 لیست سیاه</div>
-                <div class="menu-item danger" onclick="app.leaveLobby()">🚪 خروج از لابی</div>
-            `;
-        } else if (this.isLobbyCreator) {
-            menuHTML = `
-                <div class="menu-item" onclick="app.openLobbyBannedList()">📋 لیست مسدود لابی</div>
-                <div class="menu-item" onclick="app.startGame()">🎮 شروع بازی</div>
-                <div class="menu-item danger" onclick="app.leaveLobby()">🚪 خروج از لابی</div>
-            `;
-        } else {
-            menuHTML = `
-                <div class="menu-item danger" onclick="app.leaveLobby()">🚪 خروج از لابی</div>
-            `;
-        }
-
-        menu.innerHTML = menuHTML;
-    },
-
-    toggleMainMenu() {
-        this.playClickSound();
-        const menu = document.getElementById('mainMenu');
-        if (menu) {
-            menu.classList.toggle('visible');
-        }
-    },
-
-    openLobbyBannedList() {
-        this.playClickSound();
-        if (!this.isLobbyCreator && this.userRole !== 'support' && !this.isGameCreator) return;
-
-        const container = document.getElementById('lobbyBannedItems');
-        if (!container) return;
-
-        if (this.lobbyBannedUsers.length === 0) {
-            container.innerHTML = '<div style="color: white; text-align: center; padding: 20px;">لیست مسدود خالی است</div>';
-        } else {
-            let html = '';
-            this.lobbyBannedUsers.forEach((id, index) => {
-                html += `
-                    <div class="banned-user-item">
-                        <span>کاربر ${id}</span>
-                        <button class="unban-small-btn" onclick="app.unbanFromLobby(${id})">رفع مسدود</button>
-                    </div>
-                `;
-            });
-            container.innerHTML = html;
-        }
-
-        const list = document.getElementById('lobbyBannedList');
-        if (list) {
-            list.style.display = 'block';
-        }
-    },
-
-    closeLobbyBannedList() {
-        this.playClickSound();
-        const list = document.getElementById('lobbyBannedList');
-        if (list) {
-            list.style.display = 'none';
-        }
-    },
-
-    async unbanFromLobby(userId) {
-        this.playClickSound();
-        if (!this.isLobbyCreator && this.userRole !== 'support' && !this.isGameCreator) return;
-
-        this.lobbyBannedUsers = this.lobbyBannedUsers.filter(id => id !== userId);
-
-        if (this.currentLobby) {
-            this.currentLobby.bannedUsers = this.lobbyBannedUsers;
-            await this.saveLobbiesToServer();
-        }
-
-        this.openLobbyBannedList();
-        this.showNotification(`✅ کاربر ${userId} از لیست مسدود حذف شد`);
-    },
-
-    addPlayerToLobby(player, chairNumber = null) {
-        if (this.playersData[player.id]) return;
-
-        if (chairNumber) {
-            const chair = document.getElementById(`chair-${chairNumber}`);
-            if (chair && chair.classList.contains('empty-chair')) {
-                this.placePlayerInChair(chair, player, chairNumber);
-            }
-        } else {
-            for (let i = 1; i <= 10; i++) {
-                const chair = document.getElementById(`chair-${i}`);
-                if (chair && chair.classList.contains('empty-chair')) {
-                    this.placePlayerInChair(chair, player, i);
-                    break;
-                }
-            }
-        }
-    },
-
-    placePlayerInChair(chair, player, chairNumber) {
-        if (!chair) return;
-
-        chair.classList.remove('empty-chair');
-        const avatarImg = this.getAvatarImage(player.avatar);
-
-        this.playersData[player.id] = { ...player, chair: chairNumber };
-
-        const isPlayerReady = this.playersReady[player.id] !== undefined ? this.playersReady[player.id] : true;
-        const readyClass = isPlayerReady ? 'ready' : 'not-ready';
-
-        let nameHTML = `<span>${player.name}</span>`;
-        if (player.hasBlueTick || player.id === 1) {
-            nameHTML = `<i class="fas fa-check-circle" style="color: #3b9eff;"></i> ${player.name}`;
-        } else if (player.hasOrangeTick) {
-            nameHTML = `<i class="fas fa-check-circle" style="color: #ffaa00;"></i> ${player.name}`;
-        } else if (player.hasBrownTick) {
-            nameHTML = `<i class="fas fa-check-circle" style="color: #8B4513;"></i> ${player.name}`;
-        } else if (player.isCreator) {
-            nameHTML = `<span class="crown-icon">👑</span> ${player.name}`;
-        }
-
-        const speakingBadgeId = `speaking-${chairNumber}`;
-
-        chair.innerHTML = `
-            <div class="chair-avatar ${readyClass}" onclick="app.handleChairClick(${player.id}, '${player.name.replace(/'/g, "\\'")}')">
-                <img src="${avatarImg}">
-            </div>
-            <div class="chair-name" id="name-${player.id}">
-                ${nameHTML}
-            </div>
-            <div class="speaking-badge" id="${speakingBadgeId}" style="display: none;">🎤</div>
-        `;
-
-        chair.dataset.playerId = player.id;
-    },
-
-    handleChairClick(playerId, playerName) {
-        this.playClickSound();
-        if (playerId === this.userId) {
-            this.showNotification('👤 این پروفایل خودت هستی');
-            return;
-        }
-
-        this.selectedPlayerId = playerId;
-        this.selectedPlayerData = this.playersData[playerId];
-
-        console.log('کاربر انتخاب شد:', this.selectedPlayerData);
-
-        if (this.isGameCreator || this.userRole === 'support') {
-            this.openGameCreatorAdminPanel(playerId);
-        } else if (this.isLobbyCreator) {
-            this.openAdminPanel(playerId);
-        } else if (this.userRole === 'observer') {
-            this.openObserverPanel(playerId);
-        } else if (this.hasBrownTick) {
-            // ادمین‌های تیک قهوه‌ای
-            this.openAdminSimplePanel(playerId);
-        } else {
-            this.openUserProfileMenu(playerId, playerName);
-        }
-    },
-
-    openObserverPanel(playerId) {
-        this.playClickSound();
-        if (this.userRole !== 'observer') return;
-
-        const player = this.playersData[playerId];
-        if (!player) return;
-
-        this.selectedPlayerId = playerId;
-        this.selectedPlayerData = player;
-
-        const panel = document.getElementById('adminPanel');
-        if (!panel) return;
-
-        const title = document.getElementById('adminPanelTitle');
-        const avatar = document.getElementById('adminPlayerAvatar');
-        const name = document.getElementById('adminPlayerName');
-        const id = document.getElementById('adminPlayerId');
-        const warning = document.getElementById('adminWarning');
-        const actions = document.getElementById('adminActions');
-
-        if (title) title.textContent = 'پنل ناظر';
-        if (avatar) avatar.innerHTML = `<img src="${this.getAvatarImage(player.avatar)}">`;
-        if (name) name.innerHTML = player.name;
-        if (id) id.innerHTML = player.id;
-        if (warning) warning.style.display = 'none';
-
-        if (actions) {
-            let actionsHTML = '';
-
-            actionsHTML += `<div class="admin-action-btn profile" onclick="app.viewOtherProfileFromAdmin()">👤 پروفایل</div>`;
-            actionsHTML += `<div class="admin-action-btn report" onclick="app.openReportModalFromAdmin()">🚨 گزارش</div>`;
-
-            if (playerId !== this.userId) {
-                actionsHTML += `<div class="admin-action-btn temp-ban" onclick="app.tempBanPlayerObserver()">⛔ بن ۱ روزه</div>`;
-            }
-
-            actions.innerHTML = actionsHTML;
-        }
-
-        panel.classList.add('visible');
-    },
-
-    tempBanPlayerObserver() {
-        this.playClickSound();
-        if (this.userRole !== 'observer') return;
-
-        const playerName = this.selectedPlayerData.name;
-
-        const expiry = Date.now() + (24 * 60 * 60 * 1000);
-        const tempBan = {
-            userId: this.selectedPlayerId,
-            reason: 'بن توسط ناظر',
-            expiry: expiry,
-            bannedAt: Date.now(),
-            bannedBy: this.userId,
-            bannedByName: this.userName
-        };
-
-        this.tempBannedUsers = this.tempBannedUsers.filter(b => b.userId !== this.selectedPlayerId);
-        this.tempBannedUsers.push(tempBan);
-        this.saveLobbiesToServer();
-
-        if (this.currentLobby) {
-            if (!this.currentLobby.bannedUsers) this.currentLobby.bannedUsers = [];
-            if (!this.currentLobby.bannedUsers.includes(this.selectedPlayerId)) {
-                this.currentLobby.bannedUsers.push(this.selectedPlayerId);
-            }
-            this.currentLobby.players = this.currentLobby.players.filter(p => p.id !== this.selectedPlayerId);
-        }
-
-        this.removePlayerFromLobby(this.selectedPlayerId);
-        this.saveLobbiesToServer();
-
-        this.closeAdminPanel();
-
-        if (this.selectedPlayerId === this.userId) {
-            this.showNotification(`🚫 شما توسط ${this.userName} به مدت ۱ روز بن شدید`, true, 5000);
+            console.log('❌ دسترسی غیرمجاز');
+            alert('⚠️ شما به سرور نوجوانان دسترسی ندارید!');
             setTimeout(() => {
-                window.location.href = 'https://admin161723.github.io/Mafia_Sun_10.1000/';
-            }, 3000);
-        } else {
-            this.showNotification(`⛔ ${playerName} به مدت ۱ روز بن شد`, true);
+                window.location.href = SERVERS_PAGE_URL;
+            }, 1000);
+            return false;
         }
     },
 
-    // ========== پنل ادمین ساده برای ادمین‌های تیک قهوه‌ای ==========
-    openAdminSimplePanel(playerId) {
-        this.playClickSound();
-        if (!this.hasBrownTick) return;
-
-        const player = this.playersData[playerId];
-        if (!player) return;
-
-        this.selectedPlayerId = playerId;
-        this.selectedPlayerData = player;
-
-        const panel = document.getElementById('adminSimplePanel');
-        if (!panel) return;
-
-        const avatar = document.getElementById('adminSimplePlayerAvatar');
-        const name = document.getElementById('adminSimplePlayerName');
-        const id = document.getElementById('adminSimplePlayerId');
-        const banOptions = document.getElementById('banOptions');
-        const banActionBtn = document.getElementById('banActionBtn');
-        const unbanActionBtn = document.getElementById('unbanActionBtn');
-
-        if (avatar) avatar.innerHTML = `<img src="${this.getAvatarImage(player.avatar)}">`;
-        if (name) name.innerHTML = `<i class="fas fa-check-circle" style="color: #8B4513;"></i> ${player.name}`;
-        if (id) id.innerHTML = player.id;
-
-        // بررسی آیا کاربر بن شده
-        const isBanned = this.isUserTempBanned(playerId) || this.isUserPermanentlyBanned(playerId);
-
-        if (banOptions) banOptions.style.display = 'none';
-        if (banActionBtn) banActionBtn.style.display = isBanned ? 'none' : 'flex';
-        if (unbanActionBtn) unbanActionBtn.style.display = isBanned ? 'flex' : 'none';
-
-        panel.classList.add('visible');
-    },
-
-    showBanOptions() {
-        const banOptions = document.getElementById('banOptions');
-        if (banOptions) {
-            banOptions.style.display = 'flex';
-            banOptions.style.flexDirection = 'column';
-            banOptions.style.gap = '10px';
-        }
-    },
-
-    confirmSimpleBan() {
-        const duration = parseInt(document.getElementById('simpleBanDuration').value);
-        const reason = document.getElementById('simpleBanReason').value.trim() || 'تخلف توسط ادمین';
-
-        const expiry = Date.now() + (duration * 1000);
-        const tempBan = {
-            userId: this.selectedPlayerId,
-            userName: this.selectedPlayerData.name,
-            reason: reason,
-            expiry: expiry,
-            bannedAt: Date.now(),
-            bannedBy: this.userId,
-            bannedByName: this.userName
-        };
-
-        this.tempBannedUsers = this.tempBannedUsers.filter(b => b.userId !== this.selectedPlayerId);
-        this.tempBannedUsers.push(tempBan);
-        this.saveLobbiesToServer();
-
-        if (this.currentLobby) {
-            if (!this.currentLobby.bannedUsers) this.currentLobby.bannedUsers = [];
-            if (!this.currentLobby.bannedUsers.includes(this.selectedPlayerId)) {
-                this.currentLobby.bannedUsers.push(this.selectedPlayerId);
-            }
-            this.currentLobby.players = this.currentLobby.players.filter(p => p.id !== this.selectedPlayerId);
-        }
-
-        this.removePlayerFromLobby(this.selectedPlayerId);
-        this.saveLobbiesToServer();
-
-        this.closeAdminSimplePanel();
-        this.showNotification(`⛔ کاربر ${this.selectedPlayerData.name} بن شد`, true);
-    },
-
-    unbanSimplePlayer() {
-        this.tempBannedUsers = this.tempBannedUsers.filter(b => b.userId !== this.selectedPlayerId);
-        this.saveLobbiesToServer();
-
-        if (this.currentLobby && this.currentLobby.bannedUsers) {
-            this.currentLobby.bannedUsers = this.currentLobby.bannedUsers.filter(id => id !== this.selectedPlayerId);
-            this.saveLobbiesToServer();
-        }
-
-        this.closeAdminSimplePanel();
-        this.showNotification(`✅ بن کاربر ${this.selectedPlayerData.name} لغو شد`);
-    },
-
-    closeAdminSimplePanel() {
-        const panel = document.getElementById('adminSimplePanel');
-        if (panel) panel.classList.remove('visible');
-    },
-
-    removePlayerFromLobby(playerId) {
-        for (let i = 1; i <= 10; i++) {
-            const chair = document.getElementById(`chair-${i}`);
-            if (chair && chair.dataset.playerId == playerId) {
-                chair.classList.add('empty-chair');
-                chair.innerHTML = `<div class="chair-avatar"></div><div class="chair-name">خالی</div>`;
-                delete chair.dataset.playerId;
-                delete this.playersData[playerId];
-                break;
-            }
-        }
-
-        if (this.observer1 == playerId) {
-            this.observer1 = null;
-            const observer1 = document.getElementById('observerChair1');
-            const obsSpeaking1 = document.getElementById('observer-speaking-1');
-            if (observer1) observer1.classList.remove('visible');
-            if (obsSpeaking1) obsSpeaking1.style.display = 'none';
-        }
-        if (this.observer2 == playerId) {
-            this.observer2 = null;
-            const observer2 = document.getElementById('observerChair2');
-            const obsSpeaking2 = document.getElementById('observer-speaking-2');
-            if (observer2) observer2.classList.remove('visible');
-            if (obsSpeaking2) obsSpeaking2.style.display = 'none';
-        }
-    },
-
-    async deleteLobby(lobbyId) {
-        this.playClickSound();
-        if (!this.isGameCreator && this.userRole !== 'support') return;
-        this.lobbies = this.lobbies.filter(l => l.id !== lobbyId);
-        await this.saveLobbiesToServer();
-        this.renderLobbies();
-        this.showNotification('✅ لابی حذف شد');
-    },
-
-    async deleteAllLobbies() {
-        this.playClickSound();
-        if (!this.isGameCreator && this.userRole !== 'support') return;
-        if (confirm('آیا از حذف همه لابی‌ها اطمینان دارید؟')) {
-            this.lobbies = [];
-            await this.saveLobbiesToServer();
-            this.renderLobbies();
-            this.showNotification('✅ همه لابی‌ها حذف شدند');
-            this.closeGameCreatorPanel();
-        }
-    },
-
-    viewBannedList() {
-        if (this.isGameCreator || this.userRole === 'support') {
-            if (this.blacklist.length === 0 && this.tempBannedUsers.length === 0) {
-                this.showNotification('📋 لیست سیاه خالی است');
-                return;
-            }
-            let message = '🚫 لیست سیاه:\n\n';
-            this.blacklist.forEach((id, index) => {
-                message += `${index + 1}. کاربر ${id} (دائمی)\n`;
-            });
-            this.tempBannedUsers.forEach((ban, index) => {
-                const expiryDate = new Date(ban.expiry).toLocaleString('fa-IR');
-                message += `${this.blacklist.length + index + 1}. کاربر ${ban.userId} - ${ban.reason} (تا ${expiryDate}) - بن شده توسط: ${ban.bannedByName || 'مدیریت'}\n`;
-            });
-            alert(message);
-        }
-    },
-
-    startGame() {
-        this.playClickSound();
-        if (!this.isLobbyCreator) return;
-
-        let allReady = true;
-        for (let id in this.playersData) {
-            if (!this.playersReady[id]) {
-                allReady = false;
-                break;
-            }
-        }
-        if (this.observer1 && !this.playersReady[this.observer1]) allReady = false;
-        if (this.observer2 && !this.playersReady[this.observer2]) allReady = false;
-
-        if (allReady) {
-            this.showNotification('🎮 بازی شروع شد!');
-        } else {
-            this.showNotification('❌ همه بازیکنان آماده نیستند');
-        }
-    },
-
-    async leaveLobby() {
-        this.playClickSound();
-        if (this.currentCreator === this.userId && this.currentLobby && !this.isGameCreator && this.userRole !== 'support') {
-            this.lobbies = this.lobbies.filter(l => l.id !== this.currentLobby.id);
-        } else {
-            const lobby = this.lobbies.find(l => l.id === this.currentLobby?.id);
-            if (lobby && lobby.players) {
-                lobby.players = lobby.players.filter(p => p.id !== this.userId);
-                if (lobby.readyStatus) delete lobby.readyStatus[this.userId];
-            }
-        }
-
-        await this.saveLobbiesToServer();
-
-        const lobbyPage = document.getElementById('lobby-page');
-        const friendlyHall = document.getElementById('friendly-hall-page');
-        const bannedList = document.getElementById('lobbyBannedList');
-
-        if (lobbyPage) lobbyPage.style.display = 'none';
-        if (friendlyHall) friendlyHall.style.display = 'block';
-        if (bannedList) bannedList.style.display = 'none';
-
-        this.currentLobby = null;
-        this.currentCreator = null;
-        this.isLobbyCreator = false;
-        this.observer1 = null;
-        this.observer2 = null;
-        this.playersData = {};
-        this.bannedUsers = [];
-        this.lobbyBannedUsers = [];
-        this.playersReady = {};
-        this.chatMessages = [];
-        this.chatVisible = false;
-        this.unreadCount = 0;
-
-        for (let i = 1; i <= 10; i++) {
-            const chair = document.getElementById(`chair-${i}`);
-            if (chair) {
-                chair.classList.add('empty-chair');
-                chair.innerHTML = `<div class="chair-avatar"></div><div class="chair-name">خالی</div>`;
-                delete chair.dataset.playerId;
-            }
-        }
-
-        const observer1 = document.getElementById('observerChair1');
-        const observer2 = document.getElementById('observerChair2');
-        if (observer1) observer1.classList.remove('visible');
-        if (observer2) observer2.classList.remove('visible');
-
-        this.renderLobbies();
-    },
-
-    openAdminPanel(playerId) {
-        this.playClickSound();
-        if (!this.isLobbyCreator) return;
-
-        const player = this.playersData[playerId];
-        if (!player) return;
-
-        this.selectedPlayerId = playerId;
-        this.selectedPlayerData = player;
-
-        const panel = document.getElementById('adminPanel');
-        if (!panel) return;
-
-        const title = document.getElementById('adminPanelTitle');
-        const avatar = document.getElementById('adminPlayerAvatar');
-        const name = document.getElementById('adminPlayerName');
-        const id = document.getElementById('adminPlayerId');
-        const warning = document.getElementById('adminWarning');
-        const actions = document.getElementById('adminActions');
-
-        if (title) title.textContent = 'پنل مدیریت لابی';
-        if (avatar) avatar.innerHTML = `<img src="${this.getAvatarImage(player.avatar)}">`;
-        if (name) name.innerHTML = player.name;
-        if (id) id.innerHTML = player.id;
-
-        const isPermanentlyBanned = this.isUserPermanentlyBanned(playerId);
-        const tempBan = this.isUserTempBanned(playerId);
-
-        if (warning) {
-            if (isPermanentlyBanned) {
-                warning.style.display = 'block';
-                warning.innerHTML = '⚠️ این کاربر در لیست سیاه دائمی است';
-            } else if (tempBan) {
-                warning.style.display = 'block';
-                warning.innerHTML = `⚠️ این کاربر موقتاً بن شده: ${tempBan.reason} تا ${new Date(tempBan.expiry).toLocaleString('fa-IR')}`;
-            } else {
-                warning.style.display = 'none';
-            }
-        }
-
-        if (actions) {
-            let actionsHTML = '';
-
-            actionsHTML += `<div class="admin-action-btn profile" onclick="app.viewOtherProfileFromAdmin()">👤 پروفایل</div>`;
-            actionsHTML += `<div class="admin-action-btn report" onclick="app.openReportModalFromAdmin()">🚨 گزارش</div>`;
-
-            if (this.observer1 === playerId) {
-                actionsHTML += `<div class="admin-action-btn remove-observer" onclick="app.removeFromObserver(1)">⬇️ حذف از ناظر ۱</div>`;
-            } else if (!this.observer1 && this.observer1 !== playerId && this.observer2 !== playerId) {
-                actionsHTML += `<div class="admin-action-btn observer" onclick="app.toggleObserver(1)">👁️ ناظر ۱</div>`;
-            }
-
-            if (this.observer2 === playerId) {
-                actionsHTML += `<div class="admin-action-btn remove-observer" onclick="app.removeFromObserver(2)">⬇️ حذف از ناظر ۲</div>`;
-            } else if (!this.observer2 && this.observer1 !== playerId && this.observer2 !== playerId) {
-                actionsHTML += `<div class="admin-action-btn observer" onclick="app.toggleObserver(2)">👁️ ناظر ۲</div>`;
-            }
-
-            if (this.currentCreator === this.userId && playerId !== this.userId) {
-                actionsHTML += `<div class="admin-action-btn transfer" onclick="app.transferOwnership()">👑 انتقال مالکیت</div>`;
-            }
-
-            if (playerId !== this.userId) {
-                actionsHTML += `<div class="admin-action-btn kick" onclick="app.kickPlayer()">👢 اخراج از لابی</div>`;
-            }
-
-            actions.innerHTML = actionsHTML;
-        }
-
-        panel.classList.add('visible');
-    },
-
-    openGameCreatorAdminPanel(playerId) {
-        this.playClickSound();
-        if (!this.isGameCreator && this.userRole !== 'support') return;
-
-        const player = this.playersData[playerId];
-        if (!player) {
-            console.error('کاربر یافت نشد:', playerId);
-            this.showNotification('❌ کاربر یافت نشد');
+    // ========== پنل‌های مدیریت ==========
+    showAdminPanel() {
+        if (!this.hasAdminAccess()) {
+            this.showNotification('⛔ فقط مدیران دسترسی دارند');
             return;
         }
-
-        this.selectedPlayerId = playerId;
-        this.selectedPlayerData = player;
-
-        const panel = document.getElementById('adminPanel');
-        if (!panel) return;
-
-        const title = document.getElementById('adminPanelTitle');
-        const avatar = document.getElementById('adminPlayerAvatar');
-        const name = document.getElementById('adminPlayerName');
-        const id = document.getElementById('adminPlayerId');
-        const warning = document.getElementById('adminWarning');
-        const actions = document.getElementById('adminActions');
-
-        if (title) title.textContent = 'پنل مدیریت بازی';
-        if (avatar) avatar.innerHTML = `<img src="${this.getAvatarImage(player.avatar)}">`;
-        if (name) name.innerHTML = player.name;
-        if (id) id.innerHTML = player.id;
-
-        const isPermanentlyBanned = this.isUserPermanentlyBanned(playerId);
-        const tempBan = this.isUserTempBanned(playerId);
-
-        if (warning) {
-            if (isPermanentlyBanned) {
-                warning.style.display = 'block';
-                warning.innerHTML = '⚠️ این کاربر در لیست سیاه دائمی است';
-            } else if (tempBan) {
-                warning.style.display = 'block';
-                warning.innerHTML = `⚠️ این کاربر موقتاً بن شده: ${tempBan.reason} تا ${new Date(tempBan.expiry).toLocaleString('fa-IR')}`;
-            } else {
-                warning.style.display = 'none';
-            }
-        }
-
-        if (actions) {
-            let actionsHTML = '';
-
-            actionsHTML += `<div class="admin-action-btn profile" onclick="app.viewOtherProfileFromAdmin()">👤 پروفایل</div>`;
-            actionsHTML += `<div class="admin-action-btn report" onclick="app.openReportModalFromAdmin()">🚨 گزارش</div>`;
-
-            if (this.observer1 === playerId) {
-                actionsHTML += `<div class="admin-action-btn remove-observer" onclick="app.removeFromObserver(1)">⬇️ حذف از ناظر ۱</div>`;
-            } else if (!this.observer1 && this.observer1 !== playerId && this.observer2 !== playerId) {
-                actionsHTML += `<div class="admin-action-btn observer" onclick="app.toggleObserver(1)">👁️ ناظر ۱</div>`;
-            }
-
-            if (this.observer2 === playerId) {
-                actionsHTML += `<div class="admin-action-btn remove-observer" onclick="app.removeFromObserver(2)">⬇️ حذف از ناظر ۲</div>`;
-            } else if (!this.observer2 && this.observer1 !== playerId && this.observer2 !== playerId) {
-                actionsHTML += `<div class="admin-action-btn observer" onclick="app.toggleObserver(2)">👁️ ناظر ۲</div>`;
-            }
-
-            if (playerId !== this.userId) {
-                actionsHTML += `<div class="admin-action-btn transfer" onclick="app.transferOwnership()">👑 انتقال مالکیت</div>`;
-                actionsHTML += `<div class="admin-action-btn kick" onclick="app.kickPlayer()">👢 اخراج از لابی</div>`;
-
-                if (isPermanentlyBanned) {
-                    actionsHTML += `<div class="admin-action-btn transfer" onclick="app.unbanPlayer()">✅ رفع بن دائمی</div>`;
-                } else if (tempBan) {
-                    actionsHTML += `<div class="admin-action-btn transfer" onclick="app.unbanTempPlayer()">✅ رفع بن موقت</div>`;
-                } else {
-                    actionsHTML += `<div class="admin-action-btn ban" onclick="app.openBanModal()">🚫 بن دائمی</div>`;
-                }
-            }
-
-            actions.innerHTML = actionsHTML;
-        }
-
-        panel.classList.add('visible');
+        document.getElementById('adminPanel').classList.add('visible');
     },
 
     closeAdminPanel() {
-        const panel = document.getElementById('adminPanel');
-        if (panel) panel.classList.remove('visible');
+        document.getElementById('adminPanel').classList.remove('visible');
     },
 
-    async toggleObserver(type) {
-        this.playClickSound();
-        if (!this.selectedPlayerId) return;
-        if (!this.isLobbyCreator && !this.isGameCreator && this.userRole !== 'support') return;
-
-        const playerData = this.playersData[this.selectedPlayerId];
-        if (!playerData) return;
-
-        if (type === 1) {
-            if (this.observer1) {
-                const prevPlayerData = this.playersData[this.observer1];
-                if (prevPlayerData) this.addPlayerToLobby(prevPlayerData, prevPlayerData.chair);
-                this.observer1 = null;
-                const obsSpeaking1 = document.getElementById('observer-speaking-1');
-                if (obsSpeaking1) obsSpeaking1.style.display = 'none';
-            }
-            this.removePlayerFromLobby(this.selectedPlayerId);
-            this.observer1 = this.selectedPlayerId;
-            this.updateObserverDisplay(1, playerData);
-            if (this.currentLobby) this.currentLobby.observer1 = this.selectedPlayerId;
-        } else {
-            if (this.observer2) {
-                const prevPlayerData = this.playersData[this.observer2];
-                if (prevPlayerData) this.addPlayerToLobby(prevPlayerData, prevPlayerData.chair);
-                this.observer2 = null;
-                const obsSpeaking2 = document.getElementById('observer-speaking-2');
-                if (obsSpeaking2) obsSpeaking2.style.display = 'none';
-            }
-            this.removePlayerFromLobby(this.selectedPlayerId);
-            this.observer2 = this.selectedPlayerId;
-            this.updateObserverDisplay(2, playerData);
-            if (this.currentLobby) this.currentLobby.observer2 = this.selectedPlayerId;
-        }
-
-        await this.saveLobbiesToServer();
+    showAgePanel() {
+        document.getElementById('agePanel').classList.add('visible');
         this.closeAdminPanel();
-        this.showNotification(`👁️ کاربر به ناظر منتقل شد`);
     },
 
-    removeFromObserver(type) {
-        this.playClickSound();
-        if (!this.isLobbyCreator && !this.isGameCreator && this.userRole !== 'support') return;
+    closeAgePanel() {
+        document.getElementById('agePanel').classList.remove('visible');
+        this.selectedPlayerId = null;
+        this.selectedPlayerData = null;
+    },
 
-        if (type === 1 && this.observer1) {
-            const playerData = this.playersData[this.observer1];
-            if (playerData) {
-                for (let i = 1; i <= 10; i++) {
-                    const chair = document.getElementById(`chair-${i}`);
-                    if (chair && chair.classList.contains('empty-chair')) {
-                        this.addPlayerToLobby(playerData, i);
-                        break;
-                    }
-                }
-            }
-            this.observer1 = null;
-            const observer1 = document.getElementById('observerChair1');
-            const obsSpeaking1 = document.getElementById('observer-speaking-1');
-            if (observer1) observer1.classList.remove('visible');
-            if (obsSpeaking1) obsSpeaking1.style.display = 'none';
-            if (this.currentLobby) this.currentLobby.observer1 = null;
-        } else if (type === 2 && this.observer2) {
-            const playerData = this.playersData[this.observer2];
-            if (playerData) {
-                for (let i = 1; i <= 10; i++) {
-                    const chair = document.getElementById(`chair-${i}`);
-                    if (chair && chair.classList.contains('empty-chair')) {
-                        this.addPlayerToLobby(playerData, i);
-                        break;
-                    }
-                }
-            }
-            this.observer2 = null;
-            const observer2 = document.getElementById('observerChair2');
-            const obsSpeaking2 = document.getElementById('observer-speaking-2');
-            if (observer2) observer2.classList.remove('visible');
-            if (obsSpeaking2) obsSpeaking2.style.display = 'none';
-            if (this.currentLobby) this.currentLobby.observer2 = null;
-        }
-
-        this.saveLobbiesToServer();
+    showBanPanel() {
+        document.getElementById('tempBanPanel').classList.add('visible');
         this.closeAdminPanel();
-        this.showNotification('✅ کاربر از ناظر حذف شد');
     },
 
-    updateObserverDisplay(type, playerData) {
-        if (!playerData) return;
-
-        const avatarImg = this.getAvatarImage(playerData.avatar);
-        const isPlayerReady = this.playersReady[playerData.id] !== undefined ? this.playersReady[playerData.id] : true;
-        const readyClass = isPlayerReady ? 'ready' : 'not-ready';
-
-        if (type === 1) {
-            const observer1 = document.getElementById('observerChair1');
-            const avatar1 = document.getElementById('observerAvatar1');
-            const name1 = document.getElementById('observerName1');
-
-            if (observer1) observer1.classList.add('visible');
-            if (avatar1) avatar1.innerHTML = `<img src="${avatarImg}">`;
-            if (name1) name1.innerHTML = playerData.name;
-            if (avatar1) {
-                avatar1.classList.add(readyClass);
-                avatar1.classList.remove(readyClass === 'ready' ? 'not-ready' : 'ready');
-            }
-        } else {
-            const observer2 = document.getElementById('observerChair2');
-            const avatar2 = document.getElementById('observerAvatar2');
-            const name2 = document.getElementById('observerName2');
-
-            if (observer2) observer2.classList.add('visible');
-            if (avatar2) avatar2.innerHTML = `<img src="${avatarImg}">`;
-            if (name2) name2.innerHTML = playerData.name;
-            if (avatar2) {
-                avatar2.classList.add(readyClass);
-                avatar2.classList.remove(readyClass === 'ready' ? 'not-ready' : 'ready');
-            }
-        }
+    closeTempBanPanel() {
+        document.getElementById('tempBanPanel').classList.remove('visible');
     },
 
-    transferOwnership() {
-        this.playClickSound();
-        if (!this.selectedPlayerId) return;
-        if (!this.isLobbyCreator && !this.isGameCreator && this.userRole !== 'support') return;
-
-        const newCreator = this.playersData[this.selectedPlayerId];
-        if (!newCreator) return;
-
-        if (this.currentLobby) {
-            this.currentLobby.creatorId = this.selectedPlayerId;
-            const playerIndex = this.currentLobby.players.findIndex(p => p.id === this.selectedPlayerId);
-            if (playerIndex !== -1) this.currentLobby.players[playerIndex].isCreator = true;
-            const oldCreatorIndex = this.currentLobby.players.findIndex(p => p.id === this.currentCreator);
-            if (oldCreatorIndex !== -1) this.currentLobby.players[oldCreatorIndex].isCreator = false;
-
-            this.currentLobby.creatorName = newCreator.name;
-            this.currentLobby.creatorAvatar = newCreator.avatar;
-        }
-
-        this.currentCreator = this.selectedPlayerId;
-        this.isLobbyCreator = (this.userId === this.selectedPlayerId);
-        this.saveLobbiesToServer();
-
-        for (let i = 1; i <= 10; i++) {
-            const chair = document.getElementById(`chair-${i}`);
-            if (chair && chair.dataset.playerId == this.userId) {
-                const oldPlayer = this.playersData[this.userId];
-                const oldName = chair.querySelector('.chair-name');
-                if (oldName) oldName.innerHTML = oldPlayer.name;
-            }
-            if (chair && chair.dataset.playerId == this.selectedPlayerId) {
-                const newPlayer = this.playersData[this.selectedPlayerId];
-                const newName = chair.querySelector('.chair-name');
-                if (newName) newName.innerHTML = `<span class="crown-icon">👑</span> ${newPlayer.name}`;
-            }
-        }
-
+    showPermanentBanPanel() {
+        document.getElementById('permanentBanPanel').classList.add('visible');
         this.closeAdminPanel();
-        this.updateMainMenu();
-        this.showNotification(`👑 مالکیت به ${newCreator.name} منتقل شد`);
     },
 
-    kickPlayer() {
-        this.playClickSound();
-        if (!this.selectedPlayerId) return;
-        if (!this.isLobbyCreator && !this.isGameCreator && this.userRole !== 'support') return;
-
-        if (this.selectedPlayerId === this.userId) {
-            this.showNotification('❌ نمی‌توانید خودتان را اخراج کنید');
-            return;
-        }
-
-        const playerName = this.selectedPlayerData.name;
-        this.removePlayerFromLobby(this.selectedPlayerId);
-
-        if (this.currentLobby && this.currentLobby.players) {
-            this.currentLobby.players = this.currentLobby.players.filter(p => p.id !== this.selectedPlayerId);
-        }
-
-        this.saveLobbiesToServer();
-        this.closeAdminPanel();
-        this.showNotification(`👢 ${playerName} از لابی اخراج شد`);
+    closePermanentBanPanel() {
+        document.getElementById('permanentBanPanel').classList.remove('visible');
     },
 
-    openBanModal() {
-        this.playClickSound();
-        if (!this.selectedPlayerId) {
-            this.showNotification('❌ ابتدا یک کاربر را انتخاب کنید');
-            return;
-        }
-
-        if (!this.isGameCreator && this.userRole !== 'support') {
-            this.showNotification('❌ فقط سازنده بازی می‌تواند بن کند');
-            return;
-        }
-
-        const modal = document.getElementById('banModal');
-        if (modal) modal.style.display = 'block';
-    },
-
-    closeBanModal() {
-        this.playClickSound();
-        const modal = document.getElementById('banModal');
-        if (modal) modal.style.display = 'none';
-    },
-
-    async confirmBan() {
-        this.playClickSound();
+    // ========== تغییر سن کاربر ==========
+    async changeUserAge() {
         if (!this.selectedPlayerId) {
             this.showNotification('❌ کاربری انتخاب نشده است');
-            this.closeBanModal();
             return;
         }
 
-        if (!this.isGameCreator && this.userRole !== 'support') {
-            this.showNotification('❌ فقط سازنده بازی می‌تواند بن کند');
-            this.closeBanModal();
+        const newAge = parseInt(document.getElementById('newAgeInput').value);
+        if (isNaN(newAge) || newAge < 1 || newAge > 100) {
+            this.showNotification('❌ سن باید بین ۱ تا ۱۰۰ باشد');
             return;
         }
 
-        if (this.selectedPlayerId === this.userId) {
-            this.showNotification('❌ نمی‌توانید خودتان را بن کنید');
-            this.closeBanModal();
+        try {
+            const response = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_ID}`, {
+                headers: { 
+                    'X-Master-Key': JSONBIN_KEY,
+                    'X-Bin-Meta': 'false'
+                }
+            });
+
+            if (!response.ok) throw new Error('خطا در ارتباط با سرور');
+
+            const data = await response.json();
+            
+            let targetUserPhone = null;
+            let targetUserData = null;
+
+            for (const phone in data.users) {
+                if (data.users[phone].id === this.selectedPlayerId) {
+                    targetUserPhone = phone;
+                    targetUserData = data.users[phone];
+                    break;
+                }
+            }
+
+            if (!targetUserData) {
+                this.showNotification('❌ کاربر در سرور یافت نشد');
+                return;
+            }
+
+            targetUserData.age = newAge;
+            
+            await saveUserDataToServer(targetUserPhone, targetUserData);
+
+            const localData = JSON.parse(localStorage.getItem('mafiaSun_userData') || '{}');
+            if (localData.userId === this.selectedPlayerId) {
+                localData.userAge = newAge;
+                localStorage.setItem('mafiaSun_userData', JSON.stringify(localData));
+            }
+
+            this.showNotification(`✅ سن کاربر به ${newAge} تغییر کرد`);
+            this.closeAgePanel();
+
+        } catch (error) {
+            console.error('خطا در تغییر سن:', error);
+            this.showNotification('❌ خطا در تغییر سن کاربر');
+        }
+    },
+
+    // ========== بن موقت ==========
+    confirmTempBan() {
+        if (!this.selectedPlayerId) {
+            this.showNotification('❌ کاربری انتخاب نشده است');
             return;
         }
 
-        const banMessage = document.getElementById('banMessageInput').value.trim() || 'تخلف';
         const duration = parseInt(document.getElementById('banDuration').value);
+        const reason = document.getElementById('banReason').value.trim() || 'تخلف';
 
+        const expiry = Date.now() + (duration * 1000);
+        
         const banInfo = {
             userId: this.selectedPlayerId,
-            userName: this.selectedPlayerData.name,
-            reason: banMessage,
+            userName: this.selectedPlayerData?.name || 'کاربر',
+            reason: reason,
+            expiry: expiry,
             bannedAt: Date.now(),
             bannedBy: this.userId,
             bannedByName: this.userName
         };
 
-        if (duration === 0) {
-            banInfo.permanent = true;
+        tempBannedUsers = tempBannedUsers.filter(b => b.userId !== this.selectedPlayerId);
+        tempBannedUsers.push(banInfo);
+        saveBanLists();
 
-            if (!this.blacklist.includes(this.selectedPlayerId)) {
-                this.blacklist.push(this.selectedPlayerId);
-            }
-
-            const blacklist = JSON.parse(localStorage.getItem('mafiaSun_blacklist') || '[]');
-            if (!blacklist.includes(this.selectedPlayerId)) {
-                blacklist.push(this.selectedPlayerId);
-                localStorage.setItem('mafiaSun_blacklist', JSON.stringify(blacklist));
-            }
-        } else {
-            banInfo.expiry = Date.now() + (duration * 1000);
-            banInfo.permanent = false;
-
-            this.tempBannedUsers = this.tempBannedUsers.filter(b => b.userId !== this.selectedPlayerId);
-            this.tempBannedUsers.push(banInfo);
-
-            const tempBans = JSON.parse(localStorage.getItem('mafiaSun_tempBans') || '[]');
-            const updatedTempBans = tempBans.filter(b => b.userId !== this.selectedPlayerId);
-            updatedTempBans.push(banInfo);
-            localStorage.setItem('mafiaSun_tempBans', JSON.stringify(updatedTempBans));
-        }
-
-        if (this.currentLobby) {
-            if (!this.currentLobby.bannedUsers) this.currentLobby.bannedUsers = [];
-            if (!this.currentLobby.bannedUsers.includes(this.selectedPlayerId)) {
-                this.currentLobby.bannedUsers.push(this.selectedPlayerId);
-            }
-            this.currentLobby.players = this.currentLobby.players.filter(p => p.id !== this.selectedPlayerId);
-        }
-
-        this.removePlayerFromLobby(this.selectedPlayerId);
-        await this.saveLobbiesToServer();
-
-        this.closeBanModal();
-        this.closeAdminPanel();
-
-        const durationText = duration === 0 ? 'دائمی' : (duration/3600) + ' ساعت';
-
-        sessionStorage.setItem('banInfo', JSON.stringify({
-            ...banInfo,
-            durationText: durationText
-        }));
-
-        localStorage.removeItem('mafiaSun_loggedIn');
-        localStorage.removeItem('mafiaSun_rememberMe');
-        localStorage.removeItem('mafiaSun_currentUser');
-
-        if (this.selectedPlayerId === this.userId) {
-            this.showNotification(`🚫 شما توسط ${this.userName} بن شدید: ${banMessage} (${durationText})`, true, 3000);
-            setTimeout(() => {
-                window.location.href = 'https://admin161723.github.io/Mafia_Sun_10.1000/';
-            }, 2000);
-        } else {
-            this.showNotification(`🚫 کاربر ${this.selectedPlayerData.name} بن شد: ${banMessage} (${durationText}) توسط ${this.userName}`, true, 5000);
-        }
-
-        this.selectedPlayerId = null;
-        this.selectedPlayerData = null;
+        this.showNotification(`⛔ کاربر ${banInfo.userName} به مدت ${duration/3600} ساعت بن شد`, true);
+        this.closeTempBanPanel();
     },
 
-    async unbanPlayer() {
-        this.playClickSound();
+    // ========== بن دائمی ==========
+    confirmPermanentBan() {
         if (!this.selectedPlayerId) {
             this.showNotification('❌ کاربری انتخاب نشده است');
             return;
         }
 
-        if (!this.isGameCreator && this.userRole !== 'support') return;
+        const reason = document.getElementById('permBanReason').value.trim() || 'تخلف جدی';
 
-        const userName = this.selectedPlayerData?.name || `کاربر ${this.selectedPlayerId}`;
+        const banInfo = {
+            userId: this.selectedPlayerId,
+            userName: this.selectedPlayerData?.name || 'کاربر',
+            reason: reason,
+            bannedAt: Date.now(),
+            bannedBy: this.userId,
+            bannedByName: this.userName
+        };
 
-        this.blacklist = this.blacklist.filter(id => id !== this.selectedPlayerId);
-        await this.saveLobbiesToServer();
-        this.closeAdminPanel();
-        this.showNotification(`✅ بن دائمی کاربر ${userName} لغو شد`);
+        permanentlyBannedUsers = permanentlyBannedUsers.filter(b => b.userId !== this.selectedPlayerId);
+        permanentlyBannedUsers.push(banInfo);
+        saveBanLists();
 
-        this.selectedPlayerId = null;
-        this.selectedPlayerData = null;
+        this.showNotification(`🚫 کاربر ${banInfo.userName} دائماً بن شد`, true);
+        this.closePermanentBanPanel();
     },
 
-    async unbanTempPlayer() {
-        this.playClickSound();
-        if (!this.selectedPlayerId) {
-            this.showNotification('❌ کاربری انتخاب نشده است');
+    // ========== باز کردن پنل برای کاربر انتخاب شده ==========
+    openUserAdminPanel(playerId, playerName, playerAvatar) {
+        if (!this.hasAdminAccess()) {
+            this.showNotification('⛔ فقط مدیران دسترسی دارند');
             return;
         }
 
-        if (!this.isGameCreator && this.userRole !== 'support') return;
-
-        const userName = this.selectedPlayerData?.name || `کاربر ${this.selectedPlayerId}`;
-
-        this.tempBannedUsers = this.tempBannedUsers.filter(b => b.userId !== this.selectedPlayerId);
-        await this.saveLobbiesToServer();
-        this.closeAdminPanel();
-        this.showNotification(`✅ بن موقت کاربر ${userName} لغو شد`);
-
-        this.selectedPlayerId = null;
-        this.selectedPlayerData = null;
-    },
-
-    openGameCreatorPanel() {
-        this.playClickSound();
-        if (!this.isGameCreator && this.userRole !== 'support') return;
-
-        const totalLobbies = document.getElementById('totalLobbiesCount');
-        const onlineUsers = document.getElementById('onlineUsersCount');
-        const newReports = document.getElementById('newReportsCount');
-        const blacklistCount = document.getElementById('blacklistCount');
-
-        if (totalLobbies) totalLobbies.textContent = this.lobbies.length;
-
-        let online = 0;
-        this.lobbies.forEach(lobby => {
-            online += lobby.players ? lobby.players.length : 0;
-        });
-
-        if (onlineUsers) onlineUsers.textContent = online;
-        if (newReports) newReports.textContent = this.reports.length;
-        if (blacklistCount) blacklistCount.textContent = this.blacklist.length + this.tempBannedUsers.length;
-
-        this.updateReportsList();
-        this.updateBlacklistList();
-
-        const panel = document.getElementById('gameCreatorPanel');
-        if (panel) panel.classList.add('visible');
-    },
-
-    closeGameCreatorPanel() {
-        const panel = document.getElementById('gameCreatorPanel');
-        if (panel) panel.classList.remove('visible');
-    },
-
-    switchCreatorTab(tab) {
-        this.playClickSound();
-        const tabs = document.querySelectorAll('.creator-tab');
-        const contents = document.querySelectorAll('.creator-tab-content');
-
-        tabs.forEach(t => t?.classList.remove('active'));
-        contents.forEach(c => c?.classList.remove('active'));
-
-        if (tab === 'stats') {
-            if (tabs[0]) tabs[0].classList.add('active');
-            const statsTab = document.getElementById('creator-stats-tab');
-            if (statsTab) statsTab.classList.add('active');
-        } else if (tab === 'reports') {
-            if (tabs[1]) tabs[1].classList.add('active');
-            const reportsTab = document.getElementById('creator-reports-tab');
-            if (reportsTab) reportsTab.classList.add('active');
-            this.updateReportsList();
-        } else if (tab === 'blacklist') {
-            if (tabs[2]) tabs[2].classList.add('active');
-            const blacklistTab = document.getElementById('creator-blacklist-tab');
-            if (blacklistTab) blacklistTab.classList.add('active');
-            this.updateBlacklistList();
-        }
-    },
-
-    updateReportsList() {
-        const container = document.getElementById('reportsList');
-        if (!container) return;
-
-        if (this.reports.length === 0) {
-            container.innerHTML = '<div style="color: white; text-align: center; padding: 20px;">گزارشی وجود ندارد</div>';
-            return;
-        }
-
-        let html = '';
-        this.reports.slice().reverse().forEach((report, index) => {
-            const reportDate = new Date(report.timestamp).toLocaleString('fa-IR');
-            html += `
-                <div class="report-item">
-                    <div class="report-header">
-                        <span><i class="fas fa-user"></i> گزارش دهنده: ${report.reporterName} (🆔 ${report.reporterId})</span>
-                        <span><i class="fas fa-clock"></i> ${reportDate}</span>
-                    </div>
-                    <div class="report-header" style="margin-top: 5px;">
-                        <span><i class="fas fa-user-slash"></i> کاربر گزارش شده: ${report.reportedName} (🆔 ${report.reportedId})</span>
-                    </div>
-                    <div class="report-reason">🔴 دلیل: ${report.reason}</div>
-                    <div class="report-description">📝 توضیحات: ${report.description}</div>
-                    <div class="report-actions">
-                        <button class="report-action-btn ban" onclick="app.banFromReport(${index})">
-                            <i class="fas fa-ban"></i> بن کاربر
-                        </button>
-                        <button class="report-action-btn dismiss" onclick="app.dismissReport(${index})">
-                            <i class="fas fa-check"></i> رد کردن گزارش
-                        </button>
-                    </div>
-                </div>
-            `;
-        });
-
-        container.innerHTML = html;
-    },
-
-    banFromReport(index) {
-        this.playClickSound();
-        const report = this.reports[index];
-        if (!report) {
-            this.showNotification('❌ گزارش یافت نشد');
-            return;
-        }
-
-        let reportedUser = null;
-        if (this.currentLobby && this.currentLobby.players) {
-            reportedUser = this.currentLobby.players.find(p => p.id === report.reportedId);
-        }
-
-        if (!reportedUser) {
-            reportedUser = {
-                id: report.reportedId,
-                name: report.reportedName,
-                avatar: 'avatar1'
-            };
-        }
-
-        this.selectedPlayerId = report.reportedId;
-        this.selectedPlayerData = reportedUser;
-
-        this.closeGameCreatorPanel();
-        this.openBanModal();
-
-        setTimeout(() => {
-            this.dismissReport(index);
-        }, 1000);
-    },
-
-    dismissReport(index) {
-        this.reports.splice(index, 1);
-        this.saveReports();
-        this.saveLobbiesToServer();
-        this.updateReportsList();
-        this.showNotification('✅ گزارش رد شد');
-    },
-
-    refreshReports() {
-        this.loadFromServer();
-        this.updateReportsList();
-        this.showNotification('🔄 گزارش‌ها بروزرسانی شدند');
-    },
-
-    updateBlacklistList() {
-        const container = document.getElementById('blacklistContainer');
-        if (!container) return;
-
-        let html = '<div class="banned-title">🚫 لیست سیاه دائمی:</div>';
-
-        if (this.blacklist.length === 0) {
-            html += '<div style="color: white; text-align: center; padding: 10px;">لیست سیاه دائمی خالی است</div>';
-        } else {
-            this.blacklist.forEach((id, index) => {
-                html += `
-                    <div class="banned-user-item">
-                        <span>کاربر ${id}</span>
-                        <button class="unban-small-btn" onclick="app.unbanUserFromList(${id})">
-                            <i class="fas fa-check"></i> رفع بن
-                        </button>
-                    </div>
-                `;
-            });
-        }
-
-        html += '<div class="banned-title" style="margin-top: 15px;">⏳ لیست سیاه موقت:</div>';
-
-        if (this.tempBannedUsers.length === 0) {
-            html += '<div style="color: white; text-align: center; padding: 10px;">لیست سیاه موقت خالی است</div>';
-        } else {
-            this.tempBannedUsers.forEach((ban, index) => {
-                const expiryDate = new Date(ban.expiry).toLocaleString('fa-IR');
-                html += `
-                    <div class="banned-user-item">
-                        <div style="flex: 1;">
-                            <div><i class="fas fa-user"></i> ${ban.userName || 'کاربر ' + ban.userId}</div>
-                            <div style="font-size: 10px; color: #ff9999;"><i class="fas fa-comment"></i> ${ban.reason}</div>
-                            <div style="font-size: 10px; color: #ffaa00;"><i class="fas fa-clock"></i> تا ${expiryDate}</div>
-                            <div style="font-size: 10px; color: #3b9eff;"><i class="fas fa-gavel"></i> توسط: ${ban.bannedByName || 'مدیریت'} (🆔 ${ban.bannedBy || '?'})</div>
-                        </div>
-                        <button class="unban-small-btn" onclick="app.unbanTempUserFromList(${ban.userId})">
-                            <i class="fas fa-check"></i> رفع بن
-                        </button>
-                    </div>
-                `;
-            });
-        }
-
-        container.innerHTML = html;
-    },
-
-    async unbanUserFromList(userId) {
-        this.playClickSound();
-        if (!this.isGameCreator && this.userRole !== 'support') return;
-
-        const userName = this.findUserNameById(userId);
-
-        this.blacklist = this.blacklist.filter(id => id !== userId);
-        await this.saveLobbiesToServer();
-        this.updateBlacklistList();
-        this.showNotification(`✅ بن دائمی کاربر ${userName} لغو شد`);
-    },
-
-    async unbanTempUserFromList(userId) {
-        this.playClickSound();
-        if (!this.isGameCreator && this.userRole !== 'support') return;
-
-        const userName = this.findUserNameById(userId);
-
-        this.tempBannedUsers = this.tempBannedUsers.filter(b => b.userId !== userId);
-        await this.saveLobbiesToServer();
-        this.updateBlacklistList();
-        this.showNotification(`✅ بن موقت کاربر ${userName} لغو شد`);
-    },
-
-    findUserNameById(userId) {
-        if (this.currentLobby && this.currentLobby.players) {
-            const player = this.currentLobby.players.find(p => p.id === userId);
-            if (player) return player.name;
-        }
-
-        const tempBan = this.tempBannedUsers.find(b => b.userId === userId);
-        if (tempBan && tempBan.userName) return tempBan.userName;
-
-        return `کاربر ${userId}`;
-    },
-
-    openUserProfileMenu(playerId, playerName) {
         this.selectedPlayerId = playerId;
-        this.selectedPlayerData = this.playersData[playerId];
-        const menuTitle = document.getElementById('profileMenuUserName');
-        const menu = document.getElementById('userProfileMenu');
-        if (menuTitle) menuTitle.innerHTML = `پروفایل ${playerName}`;
-        if (menu) menu.classList.add('visible');
+        this.selectedPlayerData = { name: playerName };
+
+        // به‌روزرسانی اطلاعات در پنل‌ها
+        document.getElementById('adminUserName').textContent = playerName;
+        document.getElementById('adminUserId').textContent = playerId;
+        document.getElementById('agePanelTitle').textContent = `تغییر سن ${playerName}`;
+        document.getElementById('banUserName').textContent = playerName;
+        document.getElementById('banUserId').textContent = playerId;
+        document.getElementById('permBanUserName').textContent = playerName;
+        document.getElementById('permBanUserId').textContent = playerId;
+
+        this.showAdminPanel();
     },
 
-    closeUserProfileMenu() {
-        const menu = document.getElementById('userProfileMenu');
-        if (menu) menu.classList.remove('visible');
+    // ========== بازگشت به صفحه سرورها ==========
+    goBackToServers() {
+        window.location.href = SERVERS_PAGE_URL;
     },
 
-    viewOtherProfile() {
-        this.playClickSound();
-        if (!this.selectedPlayerData) return;
-        this.showOtherProfile(this.selectedPlayerData);
-        this.closeUserProfileMenu();
+    // ========== تازه سازی صفحه ==========
+    refreshPage() {
+        location.reload();
     },
 
-    viewOtherProfileFromAdmin() {
-        this.playClickSound();
-        if (!this.selectedPlayerData) return;
-        this.showOtherProfile(this.selectedPlayerData);
-        this.closeAdminPanel();
-    },
-
-    viewOtherProfileFromSimpleAdmin() {
-        this.playClickSound();
-        if (!this.selectedPlayerData) return;
-        this.showOtherProfile(this.selectedPlayerData);
-        this.closeAdminSimplePanel();
-    },
-
-    showOtherProfile(player) {
-        const stats = this.userStats || {
-            wins: 0, losses: 0, hours: 0, observerCount: 0,
-            rank: 'تازه‌وارد', rankTag: 'برنزی'
-        };
-
-        let nameHTML = player.name;
-        if (player.hasBlueTick || player.id === 1) {
-            nameHTML = `<i class="fas fa-check-circle" style="color: #3b9eff;"></i> ${player.name}`;
-        } else if (player.hasOrangeTick) {
-            nameHTML = `<i class="fas fa-check-circle" style="color: #ffaa00;"></i> ${player.name}`;
-        } else if (player.hasBrownTick) {
-            nameHTML = `<i class="fas fa-check-circle" style="color: #8B4513;"></i> ${player.name}`;
-        }
-
-        const avatar = document.getElementById('otherProfileAvatar');
-        const userName = document.getElementById('otherProfileUserName');
-        const levelBadge = document.getElementById('otherProfileLevelBadge');
-        const userId = document.getElementById('otherUserIdDisplay');
-        const win = document.getElementById('otherWinCount');
-        const lose = document.getElementById('otherLoseCount');
-        const hours = document.getElementById('otherHoursPlayed');
-        const observer = document.getElementById('otherObserverCount');
-        const rank = document.getElementById('otherRankName');
-        const rankTag = document.getElementById('otherRankTag');
-
-        if (avatar) avatar.innerHTML = `<img src="${this.getAvatarImage(player.avatar)}">`;
-        if (userName) userName.innerHTML = nameHTML;
-        if (levelBadge) levelBadge.innerHTML = player.isCreator ? 'سازنده' : 'سطح ۱';
-        if (userId) userId.innerHTML = player.id;
-        if (win) win.innerHTML = stats.wins || 0;
-        if (lose) lose.innerHTML = stats.losses || 0;
-        if (hours) hours.innerHTML = stats.hours || 0;
-        if (observer) observer.innerHTML = stats.observerCount || 0;
-        if (rank) rank.innerHTML = stats.rank || 'تازه‌وارد';
-        if (rankTag) rankTag.innerHTML = stats.rankTag || 'برنزی';
-
-        const isPermanentlyBanned = this.isUserPermanentlyBanned(player.id);
-        const tempBan = this.isUserTempBanned(player.id);
-
-        let banStatus = '';
-        if (isPermanentlyBanned) {
-            banStatus = '🚫 بن دائمی';
-        } else if (tempBan) {
-            const expiryDate = new Date(tempBan.expiry).toLocaleString('fa-IR');
-            banStatus = `⏳ بن موقت تا ${expiryDate}`;
-        }
-
-        if (banStatus) {
-            const statusEl = document.createElement('div');
-            statusEl.className = 'other-stat-cell';
-            statusEl.style.marginTop = '10px';
-            statusEl.style.background = 'rgba(255, 85, 85, 0.2)';
-            statusEl.style.borderColor = '#ff5555';
-            statusEl.innerHTML = `
-                <span class="other-stat-icon">🚫</span>
-                <div class="other-stat-detail">
-                    <span class="other-stat-label">وضعیت</span>
-                    <span class="other-stat-figure" style="color: #ff5555;">${banStatus}</span>
-                </div>
-            `;
-            document.querySelector('.other-stats-section').appendChild(statusEl);
-        }
-
-        const lobbyPage = document.getElementById('lobby-page');
-        const otherPage = document.getElementById('other-profile-page');
-
-        if (lobbyPage) lobbyPage.style.display = 'none';
-        if (otherPage) otherPage.style.display = 'block';
-    },
-
-    closeOtherProfile() {
-        this.playClickSound();
-        const otherPage = document.getElementById('other-profile-page');
-        const lobbyPage = document.getElementById('lobby-page');
-
-        if (otherPage) otherPage.style.display = 'none';
-        if (lobbyPage) lobbyPage.style.display = 'block';
-    },
-
-    openReportModal() {
-        this.playClickSound();
-        if (!this.selectedPlayerData) {
-            this.showNotification('❌ ابتدا روی یک کاربر کلیک کنید');
-            return;
-        }
-        const modal = document.getElementById('report-modal');
-        if (modal) modal.style.display = 'block';
-        this.closeUserProfileMenu();
-    },
-
-    openReportModalFromAdmin() {
-        this.playClickSound();
-        if (!this.selectedPlayerData) {
-            this.showNotification('❌ کاربری انتخاب نشده است');
-            return;
-        }
-        const modal = document.getElementById('report-modal');
-        if (modal) modal.style.display = 'block';
-        this.closeAdminPanel();
-    },
-
-    closeReportModal() {
-        this.playClickSound();
-        const modal = document.getElementById('report-modal');
-        if (modal) modal.style.display = 'none';
-        const desc = document.getElementById('reportDescription');
-        if (desc) desc.value = '';
-        const radios = document.querySelectorAll('input[name="reportReason"]');
-        if (radios.length > 0) radios[0].checked = true;
-    },
-
-    sendReport() {
-        this.playClickSound();
-        if (!this.selectedPlayerData) {
-            this.showNotification('❌ ابتدا یک کاربر را انتخاب کنید');
-            this.closeReportModal();
-            return;
-        }
-
-        const reason = document.querySelector('input[name="reportReason"]:checked')?.value;
-        if (!reason) {
-            this.showNotification('❌ لطفا یک دلیل را انتخاب کنید');
-            return;
-        }
-
-        const description = document.getElementById('reportDescription')?.value.trim() || 'بدون توضیحات';
-
-        const reportData = {
-            id: Date.now(),
-            reporterId: this.userId,
-            reporterName: this.userName,
-            reportedId: this.selectedPlayerData.id,
-            reportedName: this.selectedPlayerData.name,
-            reason: reason,
-            description: description,
-            timestamp: new Date().toISOString(),
-            lobbyId: this.currentLobby?.id,
-            lobbyName: this.currentLobby?.name
-        };
-
-        this.reports.push(reportData);
-        this.saveReports();
-        this.saveLobbiesToServer();
-
-        sessionStorage.setItem('reportInfo', JSON.stringify({
-            reportedName: this.selectedPlayerData.name,
-            reason: reason,
-            description: description
-        }));
-
-        this.showNotification('✅ گزارش شما با موفقیت به مدیریت ارسال شد');
-        this.closeReportModal();
-
-        this.selectedPlayerId = null;
-        this.selectedPlayerData = null;
-    },
-
-    saveReports() {
-        localStorage.setItem('mafiaSun_reports', JSON.stringify(this.reports));
-    },
-
-    updateAllDisplays() {
-        // این تابع برای هماهنگی با پروفایل اصلی استفاده می‌شود
-    },
-
-    updateCurrencyDisplay() {
-        // این تابع برای هماهنگی با پروفایل اصلی استفاده می‌شود
-    },
-
-    // ========== توابع چت ==========
-    toggleChat() {
-        const chatPanel = document.getElementById('chatPanel');
-        if (chatPanel) {
-            if (chatPanel.classList.contains('visible')) {
-                chatPanel.classList.remove('visible');
-                this.chatVisible = false;
-            } else {
-                chatPanel.classList.add('visible');
-                this.chatVisible = true;
-                this.unreadCount = 0;
-                this.updateChatBadge();
-                this.loadChatMessages();
-            }
-        }
-    },
-
-    closeChat() {
-        const chatPanel = document.getElementById('chatPanel');
-        if (chatPanel) {
-            chatPanel.classList.remove('visible');
-            this.chatVisible = false;
-        }
-    },
-
-    updateChatBadge() {
-        const badge = document.getElementById('chatBadge');
-        if (badge) {
-            if (this.unreadCount > 0) {
-                badge.style.display = 'flex';
-                badge.textContent = this.unreadCount > 9 ? '9+' : this.unreadCount;
-            } else {
-                badge.style.display = 'none';
-            }
-        }
-    },
-
-    loadChatMessages() {
-        const chatMessages = document.getElementById('chatMessages');
-        if (!chatMessages) return;
-
-        if (this.chatMessages.length === 0) {
-            chatMessages.innerHTML = '<div style="color: #8f9aa7; text-align: center; padding: 20px; font-size: 12px;">پیامی وجود ندارد</div>';
-            return;
-        }
-
-        let html = '';
-        this.chatMessages.forEach(msg => {
-            const isOwn = msg.userId === this.userId;
-            const senderClass = isOwn ? 'own-message' : '';
-
-            let nameHTML = msg.userName;
-            if (msg.hasBlueTick) {
-                nameHTML = `<i class="fas fa-check-circle" style="color: #3b9eff; font-size: 10px;"></i> ${msg.userName}`;
-            } else if (msg.hasOrangeTick) {
-                nameHTML = `<i class="fas fa-check-circle" style="color: #ffaa00; font-size: 10px;"></i> ${msg.userName}`;
-            } else if (msg.hasBrownTick) {
-                nameHTML = `<i class="fas fa-check-circle" style="color: #8B4513; font-size: 10px;"></i> ${msg.userName}`;
-            }
-
-            html += `
-                <div class="chat-message">
-                    <div class="message-sender">
-                        <span class="sender-name">${nameHTML}</span>
-                    </div>
-                    <div class="message-bubble">${msg.text}</div>
-                </div>
-            `;
-        });
-
-        chatMessages.innerHTML = html;
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-    },
-
-    updateCharCounter() {
-        const input = document.getElementById('chatInput');
-        const counter = document.getElementById('charCounter');
-        const sendBtn = document.getElementById('sendChatBtn');
-
-        if (input && counter) {
-            const length = input.value.length;
-            counter.textContent = `${length}/50`;
-
-            if (length > 50) {
-                counter.style.color = '#ff5555';
-                input.value = input.value.substring(0, 50);
-                counter.textContent = '50/50';
-            } else {
-                counter.style.color = '#8f9aa7';
-            }
-        }
-    },
-
-    sendChatMessage() {
-        const input = document.getElementById('chatInput');
-        if (!input) return;
-
-        let text = input.value.trim();
-        if (!text || text.length === 0) return;
-
-        if (text.length > 50) {
-            text = text.substring(0, 50);
-        }
-
-        const message = {
-            userId: this.userId,
-            userName: this.userName,
-            text: text,
-            timestamp: Date.now(),
-            hasBlueTick: this.hasBlueTick,
-            hasOrangeTick: this.hasOrangeTick,
-            hasBrownTick: this.hasBrownTick
-        };
-
-        this.chatMessages.push(message);
-
-        // اضافه کردن پیام موقت روی میز
-        this.addTempMessage(message);
-
-        this.saveLobbiesToServer();
-
-        input.value = '';
-        this.updateCharCounter();
-
-        if (this.chatVisible) {
-            this.loadChatMessages();
-        } else {
-            this.unreadCount++;
-            this.updateChatBadge();
-        }
-    },
-
-    addTempMessage(message) {
-        const container = document.getElementById('tempMessagesContainer');
-        if (!container) return;
-
-        let nameHTML = message.userName;
-        if (message.hasBlueTick) {
-            nameHTML = `<i class="fas fa-check-circle" style="color: #3b9eff;"></i> ${message.userName}`;
-        } else if (message.hasOrangeTick) {
-            nameHTML = `<i class="fas fa-check-circle" style="color: #ffaa00;"></i> ${message.userName}`;
-        } else if (message.hasBrownTick) {
-            nameHTML = `<i class="fas fa-check-circle" style="color: #8B4513;"></i> ${message.userName}`;
-        }
-
-        const messageEl = document.createElement('div');
-        messageEl.className = 'temp-message';
-        messageEl.innerHTML = `
-            <div class="temp-message-sender">${nameHTML}</div>
-            <div class="temp-message-text">${message.text}</div>
-        `;
-
-        container.appendChild(messageEl);
-
-        setTimeout(() => {
-            if (messageEl.parentNode === container) {
-                container.removeChild(messageEl);
-            }
-        }, 3000);
-    },
-
-    // ========== توابع میکروفون ==========
+    // ========== میکروفون ==========
     async toggleMicrophone() {
-        this.playClickSound();
-        if (!this.currentLobby) {
-            this.showNotification('شما در لابی نیستید');
-            return;
-        }
-
         const micButton = document.getElementById('micButton');
         const micStatus = document.getElementById('micStatus');
-
+        
+        if (!micButton || !micStatus) return;
+        
         if (!this.micActive) {
             try {
                 this.mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
                 this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
                 await this.audioContext.resume();
 
-                if (micButton) micButton.classList.add('active');
-                if (micStatus) micStatus.textContent = 'میکروفون فعال';
+                micButton.classList.add('active');
+                micStatus.textContent = 'میکروفون فعال';
                 this.micActive = true;
-
-                this.broadcastSpeakingStatus(true);
-                this.showNotification('میکروفون فعال شد');
+                this.showNotification('✅ میکروفون فعال شد');
             } catch (error) {
                 console.error('خطا در دسترسی به میکروفون:', error);
                 this.showNotification('❌ دسترسی به میکروفون ممکن نیست');
@@ -5594,165 +3477,163 @@ const App = {
                 this.audioContext = null;
             }
 
-            if (micButton) micButton.classList.remove('active');
-            if (micStatus) micStatus.textContent = 'میکروفون خاموش';
+            micButton.classList.remove('active');
+            micStatus.textContent = 'میکروفون خاموش';
             this.micActive = false;
-
-            this.broadcastSpeakingStatus(false);
-            this.showNotification('میکروفون خاموش شد');
+            this.showNotification('🔇 میکروفون خاموش شد');
         }
     },
 
-    broadcastSpeakingStatus(isSpeaking) {
-        if (this.currentLobby) {
-            const speakingIndicator = document.getElementById('speakingIndicator');
-            const speakingName = document.getElementById('speakingName');
+    // ========== پر کردن صندلی میزبان ==========
+    fillHostChair() {
+        const chair1 = document.getElementById('chair-1');
+        if (!chair1) return;
+        
+        chair1.classList.remove('empty-chair');
+        
+        let badgeHtml = '';
+        if (this.hasBlueTick) {
+            badgeHtml = '<i class="fas fa-check-circle" style="color: #3b9eff; margin-right: 5px;"></i>';
+        } else if (this.hasOrangeTick) {
+            badgeHtml = '<i class="fas fa-check-circle" style="color: #ffaa00; margin-right: 5px;"></i>';
+        } else if (this.hasBrownTick) {
+            badgeHtml = '<i class="fas fa-check-circle" style="color: #8B4513; margin-right: 5px;"></i>';
+        }
+        
+        chair1.innerHTML = `
+            <div class="chair-avatar ready" onclick="app.handleChairClick(${this.userId}, '${this.userName}', '${this.currentAvatar}')">
+                <img src="${this.getAvatarImage(this.currentAvatar)}">
+            </div>
+            <div class="chair-name">${badgeHtml}${this.userName}</div>
+        `;
+        
+        const crown = document.createElement('div');
+        crown.className = 'chair-crown';
+        crown.innerHTML = '👑';
+        crown.style.position = 'absolute';
+        crown.style.top = '-10px';
+        crown.style.left = '-10px';
+        crown.style.fontSize = '24px';
+        crown.style.zIndex = '100';
+        chair1.appendChild(crown);
+    },
 
-            if (isSpeaking) {
-                if (speakingName) speakingName.textContent = this.userName;
-                if (speakingIndicator) speakingIndicator.style.display = 'block';
-
-                const myChair = document.querySelector(`[data-player-id="${this.userId}"]`);
-                if (myChair) {
-                    const badge = myChair.querySelector('.speaking-badge');
-                    if (badge) badge.style.display = 'flex';
-                }
-            } else {
-                if (speakingIndicator) speakingIndicator.style.display = 'none';
-
-                const myChair = document.querySelector(`[data-player-id="${this.userId}"]`);
-                if (myChair) {
-                    const badge = myChair.querySelector('.speaking-badge');
-                    if (badge) badge.style.display = 'none';
-                }
-            }
+    // ========== پر کردن صندلی‌های نمونه ==========
+    fillSampleChairs() {
+        const chair2 = document.getElementById('chair-2');
+        if (chair2 && chair2.classList.contains('empty-chair')) {
+            chair2.classList.remove('empty-chair');
+            chair2.innerHTML = `
+                <div class="chair-avatar ready" onclick="app.handleChairClick(2, 'دوست', 'avatar2')">
+                    <img src="${this.getAvatarImage('avatar2')}">
+                </div>
+                <div class="chair-name">دوست</div>
+            `;
+        }
+        
+        const chair3 = document.getElementById('chair-3');
+        if (chair3 && chair3.classList.contains('empty-chair')) {
+            chair3.classList.remove('empty-chair');
+            chair3.innerHTML = `
+                <div class="chair-avatar not-ready" onclick="app.handleChairClick(3, 'علی', 'avatar1')">
+                    <img src="${this.getAvatarImage('avatar1')}">
+                </div>
+                <div class="chair-name">علی</div>
+            `;
+        }
+        
+        const chair6 = document.getElementById('chair-6');
+        if (chair6 && chair6.classList.contains('empty-chair')) {
+            chair6.classList.remove('empty-chair');
+            chair6.innerHTML = `
+                <div class="chair-avatar ready" onclick="app.handleChairClick(6, 'سارا', 'avatar2')">
+                    <img src="${this.getAvatarImage('avatar2')}">
+                </div>
+                <div class="chair-name">سارا</div>
+            `;
         }
     },
 
-    // ========== توابع وضعیت آماده ==========
-    toggleReady() {
+    // ========== کلیک روی صندلی ==========
+    handleChairClick(playerId, playerName, playerAvatar = 'avatar1') {
         this.playClickSound();
-        if (this.isGameCreator || this.userRole === 'support' || this.userRole === 'observer') {
-            this.showNotification('⚡ شما مقام ویژه دارید');
+        
+        if (playerId === this.userId) {
+            this.showNotification('👤 این پروفایل خودت هستی');
             return;
         }
 
-        const isReady = this.playersReady[this.userId] || false;
-        this.playersReady[this.userId] = !isReady;
-
-        const readyToggle = document.getElementById('readyToggle');
-        const readyText = document.getElementById('readyText');
-
-        if (this.playersReady[this.userId]) {
-            if (readyToggle) {
-                readyToggle.classList.add('ready');
-                readyToggle.classList.remove('not-ready');
-            }
-            if (readyText) readyText.textContent = 'آماده هستم';
+        if (this.hasAdminAccess()) {
+            this.openUserAdminPanel(playerId, playerName, playerAvatar);
         } else {
-            if (readyToggle) {
-                readyToggle.classList.add('not-ready');
-                readyToggle.classList.remove('ready');
-            }
-            if (readyText) readyText.textContent = 'آماده نیستم';
-        }
-
-        this.updatePlayerReadyStatus(this.userId, this.playersReady[this.userId]);
-        this.syncPlayerReadyStatus();
-    },
-
-    updatePlayerReadyStatus(playerId, readyStatus) {
-        for (let i = 1; i <= 10; i++) {
-            const chair = document.getElementById(`chair-${i}`);
-            if (chair && chair.dataset.playerId == playerId) {
-                const avatar = chair.querySelector('.chair-avatar');
-                if (avatar) {
-                    if (readyStatus) {
-                        avatar.classList.add('ready');
-                        avatar.classList.remove('not-ready');
-                    } else {
-                        avatar.classList.add('not-ready');
-                        avatar.classList.remove('ready');
-                    }
-                }
-                break;
-            }
-        }
-
-        if (this.observer1 === playerId) {
-            const observerAvatar = document.getElementById('observerAvatar1');
-            if (observerAvatar) {
-                if (readyStatus) {
-                    observerAvatar.classList.add('ready');
-                    observerAvatar.classList.remove('not-ready');
-                } else {
-                    observerAvatar.classList.add('not-ready');
-                    observerAvatar.classList.remove('ready');
-                }
-            }
-        }
-        if (this.observer2 === playerId) {
-            const observerAvatar = document.getElementById('observerAvatar2');
-            if (observerAvatar) {
-                if (readyStatus) {
-                    observerAvatar.classList.add('ready');
-                    observerAvatar.classList.remove('not-ready');
-                } else {
-                    observerAvatar.classList.add('not-ready');
-                    observerAvatar.classList.remove('ready');
-                }
-            }
+            this.showNotification(`👤 کاربر: ${playerName}`);
         }
     },
 
-    syncPlayerReadyStatus() {
-        if (this.currentLobby) {
-            const lobby = this.lobbies.find(l => l.id === this.currentLobby.id);
-            if (lobby) {
-                if (!lobby.readyStatus) lobby.readyStatus = {};
-                lobby.readyStatus[this.userId] = this.playersReady[this.userId];
-                this.saveLobbiesToServer();
-            }
+    // ========== راه‌اندازی ==========
+    initialize() {
+        console.log('🎮 راه‌اندازی سرور نوجوانان...');
+        
+        loadBanLists();
+        
+        if (!this.loadUserData()) {
+            return;
+        }
+        
+        if (!this.checkServerAccess()) {
+            return;
+        }
+        
+        this.fillHostChair();
+        this.fillSampleChairs();
+        this.setupEventListeners();
+        
+        console.log('✅ سرور نوجوانان آماده است');
+    },
+
+    // ========== تنظیم رویدادها ==========
+    setupEventListeners() {
+        const backBtn = document.querySelector('.back-btn');
+        if (backBtn) {
+            backBtn.onclick = () => this.goBackToServers();
+        }
+        
+        const refreshBtn = document.querySelector('.refresh-btn');
+        if (refreshBtn) {
+            refreshBtn.onclick = () => this.refreshPage();
+        }
+        
+        const micContainer = document.getElementById('micContainer');
+        if (micContainer) {
+            micContainer.onclick = () => this.toggleMicrophone();
+        }
+        
+        const saveAgeBtn = document.getElementById('saveAgeBtn');
+        if (saveAgeBtn) {
+            saveAgeBtn.onclick = () => this.changeUserAge();
         }
     }
 };
 
-// ========== Event Listeners ==========
-document.addEventListener('click', function(e) {
-    if (!e.target.closest('.user-profile-menu') && !e.target.closest('.chair-avatar')) {
-        const menu = document.getElementById('userProfileMenu');
-        if (menu) menu.classList.remove('visible');
-    }
-    if (!e.target.closest('.admin-panel') && !e.target.closest('.chair-avatar')) {
-        const panel = document.getElementById('adminPanel');
-        if (panel) panel.classList.remove('visible');
-    }
-    if (!e.target.closest('.admin-simple-panel') && !e.target.closest('.chair-avatar')) {
-        const panel = document.getElementById('adminSimplePanel');
-        if (panel) panel.classList.remove('visible');
-    }
-    if (!e.target.closest('.game-creator-panel') && !e.target.closest('.menu-item') && !e.target.closest('.creator-tab')) {
-        const panel = document.getElementById('gameCreatorPanel');
-        if (panel) panel.classList.remove('visible');
-    }
-    if (!e.target.closest('.menu-button') && !e.target.closest('.main-menu')) {
-        const menu = document.getElementById('mainMenu');
-        if (menu) menu.classList.remove('visible');
-    }
-    if (!e.target.closest('.lobby-banned-list') && !e.target.closest('.menu-item')) {
-        const list = document.getElementById('lobbyBannedList');
-        if (list) list.style.display = 'none';
-    }
-    if (!e.target.closest('.chat-button') && !e.target.closest('.chat-panel')) {
-        // چت رو با کلیک بیرون نمی‌بندیم
-    }
+// ========== راه‌اندازی ==========
+window.addEventListener('DOMContentLoaded', function() {
+    App.initialize();
 });
 
-window.addEventListener('DOMContentLoaded', function() {
-    App.initializeGame();
-});
+// ========== توابع سراسری ==========
+function goBackToServers() {
+    App.goBackToServers();
+}
+
+function refreshPage() {
+    App.refreshPage();
+}
+
+function toggleMicrophone() {
+    App.toggleMicrophone();
+}
 
 window.app = App;
-</script>
+ </script>
 </body>
 </html>
